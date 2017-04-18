@@ -36,6 +36,7 @@ var loginEmail;
 var loginPassword;
 
 var returnedPassword;
+var enteredPassword;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -62,6 +63,13 @@ function statusBarHide(){
     }
 
 }
+
+$(document).ready(function() {
+
+    $('#loading-wrapper').hide();
+    $('#main-menu').hide();
+
+});
 
 
 
@@ -174,15 +182,52 @@ function processQueryResult(queryReturned) {
 
         returnedPassword = json[0].password;
 
+        enteredPassword = document.getElementById('login-password').value;
+
+        if(checkpassword() === false){
+            console.log(enteredPassword);
+            console.log(returnedPassword);
+            console.log('password does not match');
+
+            document.getElementById('login-welcome').innerHTML =
+                'Invalid password!';
+
+        }
+        else if (checkpassword() == true){
+            document.getElementById('login-welcome').innerHTML =
+                'Welcome, ' + json[0].fname + '!' ;
+
+            //CONTINUE TO MAIN MENU
+
+            $('.form').fadeToggle(1000);
+            $('#loading-wrapper').show(3000);
+            $('body').css("background-color", "#24332e" );
+
+            $('#loading-wrapper').fadeOut(2000);
+
+            loadMainMenu();
+
+
+        }
         //verify the returned password matched the value they entered
-
-        document.getElementById('login-welcome').innerHTML =
-            'Welcome, ' + json[0].fname + '!' ;
-
+        //
+        // document.getElementById('login-welcome').innerHTML =
+        //     'Welcome, ' + json[0].fname + '!' ;
         // document.getElementById("output").innerHTML = returnedPassword;
-
-        console.log(count);
-        console.log(myObject);
+        //
+        // console.log(count);
+        // console.log(myObject);
 
     }
+}
+
+function loadMainMenu(){
+    $('#main-menu').show(5000);
+    // $('body').css("background-color", "white" );
+
+
+}
+
+function checkpassword() {
+    return returnedPassword === enteredPassword
 }
