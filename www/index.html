@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
-<!--new edit-->
-<!-- this is somethin im working on -->
+
+
 <!--
     Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
 
@@ -40,12 +40,12 @@
     * Create your own at http://cspisawesome.com
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <!--<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">-->
+    <!--<link rel="stylesheet" href="css/style.css">-->
 
 
-    <link rel="stylesheet" href="https://rawgit.com/SidebarJS/sidebarjs/master/dist/sidebarjs.min.css"/>
+    <!--<link rel="stylesheet" href="https://rawgit.com/SidebarJS/sidebarjs/master/dist/sidebarjs.min.css"/>-->
 
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
@@ -57,6 +57,10 @@
 <body>
 
     <div class="main-container">
+
+        <div id="error-console">
+
+        </div>
 
         <div class="form">
 
@@ -71,83 +75,91 @@
 
                     <h1>Sign Up for Free</h1>
 
-                    <form action="/" method="post">
+                    <form>
+                        <!--<form action="/" method="post">-->
 
                         <div class="top-row">
                             <div class="field-wrap">
-                                <label>
+                                <label for="first-name">
                                     First Name<span class="req">*</span>
                                 </label>
-                                <input type="text" required autocomplete="off" />
+                                <input id="first-name" name="first-name" type="text" required autocomplete="off"/>
                             </div>
 
                             <div class="field-wrap">
-                                <label>
+                                <label for="last-name">
                                     Last Name<span class="req">*</span>
                                 </label>
-                                <input type="text"required autocomplete="off"/>
+                                <input id="last-name" name="last-name" type="text" required autocomplete="off"/>
                             </div>
                         </div>
 
                         <div class="field-wrap">
-                            <label>
+                            <label for="email">
                                 Email Address<span class="req">*</span>
                             </label>
-                            <input type="email"required autocomplete="off"/>
+                            <input id="email" name="email" type="email" required autocomplete="off"/>
                         </div>
 
                         <div class="field-wrap">
-                            <label>
+                            <label for="password">
                                 Set A Password<span class="req">*</span>
                             </label>
-                            <input type="password"required autocomplete="off"/>
+                            <input id="password" name="password" type="password" required autocomplete="off"/>
                         </div>
 
-                        <button type="submit" class="button button-block"/>Get Started</button>
+                        <button type="button" class="button button-block" onclick="createAccountClick(this.form)">Get Started</button>
 
                     </form>
 
                 </div>
 
                 <div id="login">
-                    <h1>Welcome</h1>
+                    <h1 id="login-welcome">Welcome</h1>
 
-                    <form action="/" method="post">
+                    <form>
 
                         <div class="field-wrap">
-                            <label>
+                            <label for="login-email">
                                 Email Address<span class="req">*</span>
                             </label>
-                            <input type="email"required autocomplete="off"/>
+                            <input id="login-email" name="login-email" type="email" required autocomplete="off"/>
                         </div>
 
                         <div class="field-wrap">
-                            <label>
+                            <label for="login-password">
                                 Password<span class="req">*</span>
                             </label>
-                            <input type="password"required autocomplete="off"/>
+                            <input id="login-password" name="login-password" type="password" required autocomplete="off"/>
                         </div>
 
                         <p class="forgot"><a href="#">Forgot Password?</a></p>
 
-                        <button class="button button-block"/>Log In</button>
+                        <button type="button" class="button button-block" onclick="loginButtonClick(this.form)">Log In</button>
 
                     </form>
 
+
                 </div>
+
 
             </div><!-- tab-content -->
 
-        </div>
+        </div> <!-- form-content -->
 
+        <div id="output"></div>
 
     </div><!-- end main-div -->
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
+    <!--<script src="http://mysqljs.com/mysql.js"></script>-->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><!-- this is for the signup and login page-->
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/mysql.js"></script>
+    <script type="text/javascript" src="js/jQuery.js"></script>
 
 
 </body>

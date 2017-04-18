@@ -17,7 +17,25 @@
  * under the License.
  */
 
-"user strict";
+"use strict";
+
+//Global Variables
+
+var dbHost = "dmazzola.com";
+var dbLogin = "ecamilon";
+var dbLoginPass = "ecam5470";
+var dbName = "test_db_ecamilon";
+//var insertUser = "INSERT INTO users (fname,lname,email,password) VALUES('JR','Camilon','test2@test.com','pass341');";
+
+var firstName;
+var lastName;
+var email;
+var password;
+
+var loginEmail;
+var loginPassword;
+
+var returnedPassword;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -45,82 +63,126 @@ function statusBarHide(){
 
 }
 
-// var app = {
-//     // Application Constructor
-//     initialize: function() {
-//         this.bindEvents();
-//     },
-//     // Bind Event Listeners
-//     //
-//     // Bind any events that are required on startup. Common events are:
-//     // 'load', 'deviceready', 'offline', and 'online'.
-//     bindEvents: function() {
-//         document.addEventListener('deviceready', this.onDeviceReady, false);
-//     },
-//     // deviceready Event Handler
-//     //
-//     // The scope of 'this' is the event. In order to call the 'receivedEvent'
-//     // function, we must explicitly call 'app.receivedEvent(...);'
-//     onDeviceReady: function() {
-//         app.receivedEvent('deviceready');
-//     },
-//     // Update DOM on a Received Event
-//     receivedEvent: function(id) {
-//         var parentElement = document.getElementById(id);
-//         var listeningElement = parentElement.querySelector('.listening');
-//         var receivedElement = parentElement.querySelector('.received');
-//
-//         listeningElement.setAttribute('style', 'display:none;');
-//         receivedElement.setAttribute('style', 'display:block;');
-//
-//         console.log('Received Event: ' + id);
-//     }
-// };
 
 
-$('.form').find('input, textarea').on('keyup blur focus', function (e) {
+function createAccountClick(form) {
 
-    var $this = $(this),
-        label = $this.prev('label');
 
-    if (e.type === 'keyup') {
-        if ($this.val() === '') {
-            label.removeClass('active highlight');
-        } else {
-            label.addClass('active highlight');
-        }
-    } else if (e.type === 'blur') {
-        if( $this.val() === '' ) {
-            label.removeClass('active highlight');
-        } else {
-            label.removeClass('highlight');
-        }
-    } else if (e.type === 'focus') {
+    firstName   = document.getElementById('first-name').value;
+    lastName    =  document.getElementById('last-name').value;
+    email       =  document.getElementById('email').value;
+    password    =  document.getElementById('password').value;
 
-        if( $this.val() === '' ) {
-            label.removeClass('highlight');
-        }
-        else if( $this.val() !== '' ) {
-            label.addClass('highlight');
-        }
-    }
+    var statementBegin = "INSERT INTO users (fname,lname,email,password) VALUES(";
+    var com = ",";
+    var char = "'";
+    var statementEnd = ");";
 
-});
+    var sqlStatement = statementBegin.concat(char,
+        firstName,char,com,char,
+        lastName,char,com,char,
+        email,char,com,char,
+        password,char,statementEnd);
 
-$('.tab a').on('click', function (e) {
+    executeSQLStatement(sqlStatement);
 
-    e.preventDefault();
 
+    // go back to login screen
     $(this).parent().addClass('active');
     $(this).parent().siblings().removeClass('active');
 
-    target = $(this).attr('href');
+    var target = $(this).attr('href');
 
     $('.tab-content > div').not(target).hide();
 
-    $(target).fadeIn(600);
+    // $(' .tab-content').find('#login').show(300);
 
-});
+    $('.tab a').click();
 
 
-$()
+
+}
+
+function loginButtonClick(form){
+
+    // $('.form').hide();
+
+    loginEmail = document.getElementById('login-email').value;
+    loginPassword = document.getElementById('login-password').value;
+
+    console.log(loginEmail);
+    console.log(loginPassword);
+
+    var statementBegin = "SELECT * FROM users where email = '";
+    var statementEnd = "';";
+
+    var sqlStatement = statementBegin.concat(loginEmail,statementEnd);
+
+    // var testStatement = "SELECT * FROM users where email = 'cchoi@asu.edu';";
+
+    executeSQLStatement2(sqlStatement);
+
+}
+
+function executeSQLStatement2(sqlStatement){
+    MySql.Execute(
+        dbHost,
+        dbLogin,
+        dbLoginPass,
+        dbName,
+        sqlStatement,
+        function (data) {
+            processQueryResult(data);
+            // console.log(data);
+        });
+}
+
+// function to execute any statement with a parameters
+// that accepts a string statement params
+function executeSQLStatement(sqlStatement){
+    MySql.Execute(
+        dbHost,
+        dbLogin,
+        dbLoginPass,
+        dbName,
+        sqlStatement,
+        function (data) {
+            console.log(data)
+
+        });
+}
+
+
+function processQueryResult(queryReturned) {
+
+    var myObject = JSON.stringify(queryReturned.Result, null, 2);
+    var count = Object.keys(myObject).length;
+
+    if (queryReturned.Success == false) {
+        alert(queryReturned.Error);
+
+    }
+    else if(count == 2){
+        console.log('user not found');
+        document.getElementById('login-welcome').innerHTML = 'Email was not found!';
+    }
+
+    else if (count > 2) {
+
+        var data = JSON.stringify(queryReturned.Result, null, 2);
+        var json = JSON.parse(data);
+
+        returnedPassword = json[0].password;
+
+        //verify the returned password matched the value they entered
+
+        document.getElementById('login-welcome').innerHTML =
+            'Welcome, ' + json[0].fname + '!' ;
+
+        // document.getElementById("output").innerHTML = returnedPassword;
+
+        console.log(count);
+        console.log(myObject);
+
+    }
+}
