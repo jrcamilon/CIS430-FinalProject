@@ -46,9 +46,9 @@ function onDeviceReady(){
 
     // $('#main-menu').hide();
     // $('#footer-main').hide();
-
-
-
+    $('#header').hide();
+    $('#foot').hide();
+    $('#liststuff').hide();
 
 
 }
@@ -100,7 +100,6 @@ function createAccountClick(form) {
 
     executeSQLStatement(sqlStatement);
 
-
     // go back to login screen
     $(this).parent().addClass('active');
     $(this).parent().siblings().removeClass('active');
@@ -119,13 +118,9 @@ function createAccountClick(form) {
 
 function loginButtonClick(form){
 
-    // $('.form').hide();
 
     loginEmail = document.getElementById('login-email').value;
     loginPassword = document.getElementById('login-password').value;
-
-    console.log(loginEmail);
-    console.log(loginPassword);
 
     var statementBegin = "SELECT * FROM users where email = '";
     var statementEnd = "';";
@@ -207,16 +202,7 @@ function processQueryResult(queryReturned) {
 
             loadMainMenu();
 
-
         }
-        //verify the returned password matched the value they entered
-        //
-        // document.getElementById('login-welcome').innerHTML =
-        //     'Welcome, ' + json[0].fname + '!' ;
-        // document.getElementById("output").innerHTML = returnedPassword;
-        //
-        // console.log(count);
-        // console.log(myObject);
 
     }
 }
@@ -226,10 +212,13 @@ function loadMainMenu(){
 
 
     $('.form').hide();
+    $('#header').show();
+    $('#foot').show();
+    $('#liststuff').show();
+
 
 
     loadScript('initMap');
-
 
 
 

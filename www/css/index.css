@@ -385,12 +385,13 @@ textarea {
 
 #header
 {
-    width: 800px;
+    /*width: 800px;*/
     margin: 0 auto;
     text-align: center;
     height: 100px;
     background-color: #666;
 }
+
 
 #content
 {
@@ -403,4 +404,16 @@ textarea {
 
 /*end loading screen*/
 
-#mapDiv 	{ height:  100vh; }  /* map gets some height          	*/
+html, body 	{ height: 100vh; } 	/* 100% of Viewport Height 		 	*/
+#header 	{ height:  10vh; } 	/* header gets some height       	*/
+#mapDiv 	{ height:  60vh; }  /* map gets some height          	*/
+
+#foot {
+    height: 10vh;
+    background: red;
+}
+
+#liststuff {
+    background: yellow;
+    height: 20vh;
+}
