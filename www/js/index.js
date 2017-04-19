@@ -48,11 +48,6 @@ function onDeviceReady(){
     // $('#footer-main').hide();
 
 
-    loadScript('initMap');
-
-    $('.map').hide();
-
-
 
 
 
@@ -228,15 +223,13 @@ function processQueryResult(queryReturned) {
 
 function loadMainMenu(){
 
-    // $('#main-menu').show(3000);
-    // $('body').css("background-color", "white" );
-    //
-    // $('#main-menu').show();
+
+
     $('.form').hide();
-    // $('#footer-main').fadeIn(1000);
 
 
-    $('.map').show();
+    loadScript('initMap');
+
 
 
 
