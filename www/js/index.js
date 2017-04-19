@@ -42,8 +42,12 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady(){
     // alert("onDeviceReady() executed");
-    statusBarHide(); //makes the statusBar disappear on runtime for the ios and android devices
+    // statusBarHide(); //makes the statusBar disappear on runtime for the ios and android devices
+    $('#loading-wrapper').hide();
+    $('#main-menu').hide();
+    $('#footer-main').hide();
 
+    // loadScript('initMap');
 
 }
 
@@ -222,12 +226,48 @@ function processQueryResult(queryReturned) {
 }
 
 function loadMainMenu(){
-    $('#main-menu').show(5000);
-    // $('body').css("background-color", "white" );
+    $('#main-menu').show(3000);
+    $('body').css("background-color", "white" );
+
+    $('#main-menu').show();
+    $('.form').hide();
+    $('#footer-main').fadeIn(1000);
+
+    initMap();
+
 
 
 }
 
 function checkpassword() {
     return returnedPassword === enteredPassword
+}
+
+function loadScript(callback) {
+    var script 		 = undefined;
+    var googleAPIKey = "AIzaSyAgQissl5FSGet4lMqGtMsMMcwbtlVgeWU";
+    var googleAPIUrl = "https://maps.googleapis.com/maps/api/js";
+
+    var srcURL 		 = googleAPIUrl + '?key=' + googleAPIKey
+        + '&callback=' + callback;
+
+    script 			 = document.createElement('script');
+    script.type 	 = "text/javascript";
+    script.async 	 = true;
+    script.defer 	 = true;
+    script.src 		 = srcURL;
+
+    document.body.appendChild(script);
+}
+
+function initMap() {
+    var mapElement 		= document.getElementById('mapDiv');
+
+    var geoLocationASU 	= {lat: 33.4166317, lng: -111.9341069};
+    var mapOptions 		= {zoom: 18, center: geoLocationASU};
+
+    var mapper = new google.maps.Map(mapElement, mapOptions);
+
+    var markerOptions 	= {position: geoLocationASU, map: mapper};
+    var marker = new google.maps.Marker(markerOptions);
 }
