@@ -43,11 +43,18 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
     // alert("onDeviceReady() executed");
     // statusBarHide(); //makes the statusBar disappear on runtime for the ios and android devices
-    $('#loading-wrapper').hide();
-    $('#main-menu').hide();
-    $('#footer-main').hide();
 
-    // loadScript('initMap');
+    // $('#main-menu').hide();
+    // $('#footer-main').hide();
+
+
+    loadScript('initMap');
+
+    $('.map').hide();
+
+
+
+
 
 }
 
@@ -203,12 +210,6 @@ function processQueryResult(queryReturned) {
 
             //CONTINUE TO MAIN MENU
 
-            $('.form').fadeToggle(1000);
-            $('#loading-wrapper').show(3000);
-            $('body').css("background-color", "#24332e" );
-
-            $('#loading-wrapper').fadeOut(2000);
-
             loadMainMenu();
 
 
@@ -226,14 +227,16 @@ function processQueryResult(queryReturned) {
 }
 
 function loadMainMenu(){
-    $('#main-menu').show(3000);
-    $('body').css("background-color", "white" );
 
-    $('#main-menu').show();
+    // $('#main-menu').show(3000);
+    // $('body').css("background-color", "white" );
+    //
+    // $('#main-menu').show();
     $('.form').hide();
-    $('#footer-main').fadeIn(1000);
+    // $('#footer-main').fadeIn(1000);
 
-    initMap();
+
+    $('.map').show();
 
 
 

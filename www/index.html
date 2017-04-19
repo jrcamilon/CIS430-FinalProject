@@ -39,9 +39,8 @@
         * Enable eval(): add 'unsafe-eval' to default-src
     * Create your own at http://cspisawesome.com
     -->
-    <!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';img-src * data: 'unsafe-inline'; fmedia-src mediastream;">-->
 
-
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';img-src * data: 'unsafe-inline'; fmedia-src mediastream;">
 
 
 
@@ -55,10 +54,6 @@
 <body onload="onDeviceReady()">
 
     <div class="main-container">
-
-        <div id="error-console">
-
-        </div>
 
         <div class="form">
 
@@ -145,191 +140,196 @@
 
         </div> <!-- form-content -->
 
-        <div id="output"></div>
+        <!--<div id="output"></div>-->
 
-        <div id="loading-wrapper">
-            <div id="loading-text">LOADING</div>
-            <div id="loading-content"></div>
-        </div>
+        <!--<div id="loading-wrapper">-->
+            <!--<div id="loading-text">LOADING</div>-->
+            <!--<div id="loading-content"></div>-->
+        <!--</div>-->
 
         <!--MAINMENU-->
-        <div id="main-menu">
+        <!--<div id="main-menu">-->
 
-            <!-- Header -->
-            <header id="header" role="banner">
-                <div class="container">
-                    <div class="row">
+            <!--&lt;!&ndash; Header &ndash;&gt;-->
+            <!--<header id="header" role="banner">-->
+                <!--<div class="container">-->
+                    <!--<div class="row">-->
 
-                        <!-- Navigation -->
-                        <nav id="nav" role="navigation" class="">
-                            <!-- Burger Menu -->
-                            <ul id="brg-menu">
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
+                        <!--&lt;!&ndash; Navigation &ndash;&gt;-->
+                        <!--<nav id="nav" role="navigation" class="">-->
+                            <!--&lt;!&ndash; Burger Menu &ndash;&gt;-->
+                            <!--<ul id="brg-menu">-->
+                                <!--<li></li>-->
+                                <!--<li></li>-->
+                                <!--<li></li>-->
+                            <!--</ul>-->
 
-                            <!-- Brand Logo -->
-                            <a class="nav-logo">
-                                <!--     <img src="https://upload.wikimedia.org/wikipedia/en/9/92/React-native-icon.svg" alt="logo"> -->
-                            </a>
+                            <!--&lt;!&ndash; Brand Logo &ndash;&gt;-->
+                            <!--<a class="nav-logo">-->
+                                <!--&lt;!&ndash;     <img src="https://upload.wikimedia.org/wikipedia/en/9/92/React-native-icon.svg" alt="logo"> &ndash;&gt;-->
+                            <!--</a>-->
 
-                            <!-- Menu -->
-                            <ul class="nav-menu">
-                                <li><a href="javascript:void(0);">Profile</a></li>
-                                <li><a href="javascript:void(0);">Search</a></li>
-                                <li><a href="javascript:void(0);">About</a></li>
-                                <li><a href="javascript:void(0);">Logout</a></li>
-                            </ul>
+                            <!--&lt;!&ndash; Menu &ndash;&gt;-->
+                            <!--<ul class="nav-menu">-->
+                                <!--<li><a href="javascript:void(0);">Profile</a></li>-->
+                                <!--<li><a href="javascript:void(0);">Search</a></li>-->
+                                <!--<li><a href="javascript:void(0);">About</a></li>-->
+                                <!--<li><a href="javascript:void(0);">Logout</a></li>-->
+                            <!--</ul>-->
 
-                        </nav>
+                        <!--</nav>-->
 
-                    </div>
-                </div>
-            </header>
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</header>-->
 
-            <div id="main" role="main">
-                <div class="container">
-                    <div class="row">
+            <!--<div id="main" role="main">-->
+                <!--<div class="container">-->
+                    <!--<div class="row">-->
 
-                        <!--<div class="placeholder-image">-->
-                            <!--&lt;!&ndash;  <img src="https://static.pexels.com/photos/342469/pexels-photo-342469.jpeg"/> &ndash;&gt;-->
-                            <!--&lt;!&ndash;         <div class="title-block">-->
-                                      <!--<h1>Heading</h1>-->
-                                      <!--<h2>Subheading</h2>c-->
-                                    <!--</div> &ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="placeholder-image">&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;  <img src="https://static.pexels.com/photos/342469/pexels-photo-342469.jpeg"/> &ndash;&gt;&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;         <div class="title-block">&ndash;&gt;-->
+                                      <!--&lt;!&ndash;<h1>Heading</h1>&ndash;&gt;-->
+                                      <!--&lt;!&ndash;<h2>Subheading</h2>c&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</div> &ndash;&gt;&ndash;&gt;-->
 
-                        <!--</div>-->
-                        <div id="mapDiv"></div>
-                        <div class="placeholder-content">
-                            <!--         <div class="placeholder-item"></div>
-                                    <div class="placeholder-item"></div>
-                                    <div class="placeholder-item"></div>
-                                    <div class="placeholder-item"></div>
-                                    <div class="placeholder-item"></div>
-                                    <div class="placeholder-item"></div>
-                                    <div class="placeholder-item"></div> -->
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div id="footer-main">
-
-                <svg class="hide" xmlns="http://www.w3.org/2000/svg" version="1.1">
-                    <defs>
-                        <symbol id="icon-phone" viewBox="0 0 578.106 578.106">
-                            <path class="path1" d="M577.83,456.128c1.225,9.385-1.635,17.545-8.568,24.48l-81.396,80.781
-            c-3.672,4.08-8.465,7.551-14.381,10.404c-5.916,2.857-11.729,4.693-17.439,5.508c-0.408,0-1.635,0.105-3.676,0.309
-            c-2.037,0.203-4.689,0.307-7.953,0.307c-7.754,0-20.301-1.326-37.641-3.979s-38.555-9.182-63.645-19.584
-            c-25.096-10.404-53.553-26.012-85.376-46.818c-31.823-20.805-65.688-49.367-101.592-85.68
-            c-28.56-28.152-52.224-55.08-70.992-80.783c-18.768-25.705-33.864-49.471-45.288-71.299
-            c-11.425-21.828-19.993-41.616-25.705-59.364S4.59,177.362,2.55,164.51s-2.856-22.95-2.448-30.294
-            c0.408-7.344,0.612-11.424,0.612-12.24c0.816-5.712,2.652-11.526,5.508-17.442s6.324-10.71,10.404-14.382L98.022,8.756
-            c5.712-5.712,12.24-8.568,19.584-8.568c5.304,0,9.996,1.53,14.076,4.59s7.548,6.834,10.404,11.322l65.484,124.236
-            c3.672,6.528,4.692,13.668,3.06,21.42c-1.632,7.752-5.1,14.28-10.404,19.584l-29.988,29.988c-0.816,0.816-1.53,2.142-2.142,3.978
-            s-0.918,3.366-0.918,4.59c1.632,8.568,5.304,18.36,11.016,29.376c4.896,9.792,12.444,21.726,22.644,35.802
-            s24.684,30.293,43.452,48.653c18.36,18.77,34.68,33.354,48.96,43.76c14.277,10.4,26.215,18.053,35.803,22.949
-            c9.588,4.896,16.932,7.854,22.031,8.871l7.648,1.531c0.816,0,2.145-0.307,3.979-0.918c1.836-0.613,3.162-1.326,3.979-2.143
-            l34.883-35.496c7.348-6.527,15.912-9.791,25.705-9.791c6.938,0,12.443,1.223,16.523,3.672h0.611l118.115,69.768
-            C571.098,441.238,576.197,447.968,577.83,456.128z">
-                            </path>
-                        </symbol>
-                        <symbol>
-                            <g id="mail">
-                                <path d="M102.608,290.182L289,418.736V122.789L102.608,290.182z M-223,122.789v295.947l186.388-128.572L-223,122.789z M33,352.691
-            l-44.501-39.955L-223,441h512L77.495,312.736L33,352.691z M273.64,121h-481.28L33,301.926L273.64,121z"/>
-                            </g>
-                        </symbol>
-
-                        <symbol id="lifebuoy" viewBox="0 0 1024 1024">
-                            <path class="path1" d="M512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM320 512c0-106.040 85.96-192 192-192s192 85.96 192 192-85.96 192-192 192-192-85.96-192-192zM925.98 683.476v0l-177.42-73.49c12.518-30.184 19.44-63.276 19.44-97.986s-6.922-67.802-19.44-97.986l177.42-73.49c21.908 52.822 34.020 110.73 34.020 171.476s-12.114 118.654-34.020 171.476v0zM683.478 98.020v0 0l-73.49 177.42c-30.184-12.518-63.276-19.44-97.988-19.44s-67.802 6.922-97.986 19.44l-73.49-177.422c52.822-21.904 110.732-34.018 171.476-34.018 60.746 0 118.654 12.114 171.478 34.020zM98.020 340.524l177.422 73.49c-12.518 30.184-19.442 63.276-19.442 97.986s6.922 67.802 19.44 97.986l-177.42 73.49c-21.906-52.822-34.020-110.73-34.020-171.476s12.114-118.654 34.020-171.476zM340.524 925.98l73.49-177.42c30.184 12.518 63.276 19.44 97.986 19.44s67.802-6.922 97.986-19.44l73.49 177.42c-52.822 21.904-110.73 34.020-171.476 34.020-60.744 0-118.654-12.114-171.476-34.020z"></path>
-                        </symbol>
-                        <symbol id="bubble" viewBox="0 0 1024 1024">
-                            <path class="path1" d="M512 192c-54.932 0-107.988 8.662-157.694 25.742-46.712 16.054-88.306 38.744-123.628 67.444-66.214 53.798-102.678 122.984-102.678 194.814 0 40.298 11.188 79.378 33.252 116.152 22.752 37.92 56.982 72.586 98.988 100.252 30.356 19.992 50.78 51.948 56.176 87.894 1.8 11.984 2.928 24.088 3.37 36.124 7.47-6.194 14.75-12.846 21.88-19.976 24.154-24.152 56.78-37.49 90.502-37.49 5.368 0 10.762 0.336 16.156 1.024 20.974 2.666 42.398 4.020 63.676 4.020 54.934 0 107.988-8.66 157.694-25.742 46.712-16.054 88.306-38.744 123.628-67.444 66.214-53.796 102.678-122.984 102.678-194.814s-36.464-141.016-102.678-194.814c-35.322-28.698-76.916-51.39-123.628-67.444-49.706-17.080-102.76-25.742-157.694-25.742zM512 64v0c282.77 0 512 186.25 512 416 0 229.752-229.23 416-512 416-27.156 0-53.81-1.734-79.824-5.044-109.978 109.978-241.25 129.7-368.176 132.596v-26.916c68.536-33.578 128-94.74 128-164.636 0-9.754-0.758-19.33-2.164-28.696-115.796-76.264-189.836-192.754-189.836-323.304 0-229.75 229.23-416 512-416z"></path>
-                        </symbol>
-                    </defs>
-                </svg>
-
-
-                <div class="footer-wrap">
-
-                    <div class="footer-top group mainfoot">
-                        <div class="row">
-                            <div class="twelve columns">
-                                <p><a href="/">Contact Us</a> | <a href="/">Site Map</a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="footer-top group mobfoot">
-                        <div class="row">
-                            <div id="callmob">
-                                <a href="tel:01173600530"><span>
-
-                  <svg class="icon" viewBox="0 0 578.106 578.106">
-
-	                    <use xlink:href="#icon-phone" />
-
-                  </svg> </span>
-                                    <span class="icontext">Call Us</span>
-                                </a>
-                            </div>
-                            <div id="mailmob">
-                                <a href="mailto:">
-          <span>
-                   <svg class="icon" viewBox="-223 25 512 512">
-	                   <use xlink:href="#mail" />
-                   </svg>
-                 </span>
-                                    <span class="icontext">Email Us</span>
-                                </a>
-                            </div>
-                            <div id="testmob">
-                                <a href="/contact-us">
-          <span>
-                   <svg class="icon" viewBox="0 0 1024 1024">
-	                   <use xlink:href="#bubble" />
-                   </svg>
-                 </span>
-                                    <span class="icontext">Testimonials</span>
-                                </a>
-                            </div>
-                            <div id="supportmob">
-                                <a href="/contact-us">
-          <span>
-                   <svg class="icon" viewBox="0 0 1024 1024">
-                     <use xlink:href="#lifebuoy" />
-                   </svg>
-                 </span>
-                                    <span class="icontext">Support</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="footer-bottom group">
-                        <div class="row moblowerfoot">
-                            <div class="twelve columns">
-                                <p>&copy; ##currentYear##. Test Responsive Footer UK Ltd. All Rights Reserved | ##seoTags##</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div><!-- end footer-div -->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--<div id="mapDiv"></div>-->
 
 
 
-        </div><!-- end main-menu-div -->
+                        <!--&lt;!&ndash;<div class="placeholder-content">&ndash;&gt;-->
+                            <!--&lt;!&ndash;&lt;!&ndash;         <div class="placeholder-item"></div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="placeholder-item"></div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="placeholder-item"></div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="placeholder-item"></div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="placeholder-item"></div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="placeholder-item"></div>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<div class="placeholder-item"></div> &ndash;&gt;&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--&lt;!&ndash;<div id="footer-main">&ndash;&gt;-->
+
+                <!--&lt;!&ndash;<svg class="hide" xmlns="http://www.w3.org/2000/svg" version="1.1">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<defs>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<symbol id="icon-phone" viewBox="0 0 578.106 578.106">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<path class="path1" d="M577.83,456.128c1.225,9.385-1.635,17.545-8.568,24.48l-81.396,80.781&ndash;&gt;-->
+            <!--&lt;!&ndash;c-3.672,4.08-8.465,7.551-14.381,10.404c-5.916,2.857-11.729,4.693-17.439,5.508c-0.408,0-1.635,0.105-3.676,0.309&ndash;&gt;-->
+            <!--&lt;!&ndash;c-2.037,0.203-4.689,0.307-7.953,0.307c-7.754,0-20.301-1.326-37.641-3.979s-38.555-9.182-63.645-19.584&ndash;&gt;-->
+            <!--&lt;!&ndash;c-25.096-10.404-53.553-26.012-85.376-46.818c-31.823-20.805-65.688-49.367-101.592-85.68&ndash;&gt;-->
+            <!--&lt;!&ndash;c-28.56-28.152-52.224-55.08-70.992-80.783c-18.768-25.705-33.864-49.471-45.288-71.299&ndash;&gt;-->
+            <!--&lt;!&ndash;c-11.425-21.828-19.993-41.616-25.705-59.364S4.59,177.362,2.55,164.51s-2.856-22.95-2.448-30.294&ndash;&gt;-->
+            <!--&lt;!&ndash;c0.408-7.344,0.612-11.424,0.612-12.24c0.816-5.712,2.652-11.526,5.508-17.442s6.324-10.71,10.404-14.382L98.022,8.756&ndash;&gt;-->
+            <!--&lt;!&ndash;c5.712-5.712,12.24-8.568,19.584-8.568c5.304,0,9.996,1.53,14.076,4.59s7.548,6.834,10.404,11.322l65.484,124.236&ndash;&gt;-->
+            <!--&lt;!&ndash;c3.672,6.528,4.692,13.668,3.06,21.42c-1.632,7.752-5.1,14.28-10.404,19.584l-29.988,29.988c-0.816,0.816-1.53,2.142-2.142,3.978&ndash;&gt;-->
+            <!--&lt;!&ndash;s-0.918,3.366-0.918,4.59c1.632,8.568,5.304,18.36,11.016,29.376c4.896,9.792,12.444,21.726,22.644,35.802&ndash;&gt;-->
+            <!--&lt;!&ndash;s24.684,30.293,43.452,48.653c18.36,18.77,34.68,33.354,48.96,43.76c14.277,10.4,26.215,18.053,35.803,22.949&ndash;&gt;-->
+            <!--&lt;!&ndash;c9.588,4.896,16.932,7.854,22.031,8.871l7.648,1.531c0.816,0,2.145-0.307,3.979-0.918c1.836-0.613,3.162-1.326,3.979-2.143&ndash;&gt;-->
+            <!--&lt;!&ndash;l34.883-35.496c7.348-6.527,15.912-9.791,25.705-9.791c6.938,0,12.443,1.223,16.523,3.672h0.611l118.115,69.768&ndash;&gt;-->
+            <!--&lt;!&ndash;C571.098,441.238,576.197,447.968,577.83,456.128z">&ndash;&gt;-->
+                            <!--&lt;!&ndash;</path>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</symbol>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<symbol>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<g id="mail">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<path d="M102.608,290.182L289,418.736V122.789L102.608,290.182z M-223,122.789v295.947l186.388-128.572L-223,122.789z M33,352.691&ndash;&gt;-->
+            <!--&lt;!&ndash;l-44.501-39.955L-223,441h512L77.495,312.736L33,352.691z M273.64,121h-481.28L33,301.926L273.64,121z"/>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</g>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</symbol>&ndash;&gt;-->
+
+                        <!--&lt;!&ndash;<symbol id="lifebuoy" viewBox="0 0 1024 1024">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<path class="path1" d="M512 0c-282.77 0-512 229.23-512 512s229.23 512 512 512 512-229.23 512-512-229.23-512-512-512zM320 512c0-106.040 85.96-192 192-192s192 85.96 192 192-85.96 192-192 192-192-85.96-192-192zM925.98 683.476v0l-177.42-73.49c12.518-30.184 19.44-63.276 19.44-97.986s-6.922-67.802-19.44-97.986l177.42-73.49c21.908 52.822 34.020 110.73 34.020 171.476s-12.114 118.654-34.020 171.476v0zM683.478 98.020v0 0l-73.49 177.42c-30.184-12.518-63.276-19.44-97.988-19.44s-67.802 6.922-97.986 19.44l-73.49-177.422c52.822-21.904 110.732-34.018 171.476-34.018 60.746 0 118.654 12.114 171.478 34.020zM98.020 340.524l177.422 73.49c-12.518 30.184-19.442 63.276-19.442 97.986s6.922 67.802 19.44 97.986l-177.42 73.49c-21.906-52.822-34.020-110.73-34.020-171.476s12.114-118.654 34.020-171.476zM340.524 925.98l73.49-177.42c30.184 12.518 63.276 19.44 97.986 19.44s67.802-6.922 97.986-19.44l73.49 177.42c-52.822 21.904-110.73 34.020-171.476 34.020-60.744 0-118.654-12.114-171.476-34.020z"></path>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</symbol>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<symbol id="bubble" viewBox="0 0 1024 1024">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<path class="path1" d="M512 192c-54.932 0-107.988 8.662-157.694 25.742-46.712 16.054-88.306 38.744-123.628 67.444-66.214 53.798-102.678 122.984-102.678 194.814 0 40.298 11.188 79.378 33.252 116.152 22.752 37.92 56.982 72.586 98.988 100.252 30.356 19.992 50.78 51.948 56.176 87.894 1.8 11.984 2.928 24.088 3.37 36.124 7.47-6.194 14.75-12.846 21.88-19.976 24.154-24.152 56.78-37.49 90.502-37.49 5.368 0 10.762 0.336 16.156 1.024 20.974 2.666 42.398 4.020 63.676 4.020 54.934 0 107.988-8.66 157.694-25.742 46.712-16.054 88.306-38.744 123.628-67.444 66.214-53.796 102.678-122.984 102.678-194.814s-36.464-141.016-102.678-194.814c-35.322-28.698-76.916-51.39-123.628-67.444-49.706-17.080-102.76-25.742-157.694-25.742zM512 64v0c282.77 0 512 186.25 512 416 0 229.752-229.23 416-512 416-27.156 0-53.81-1.734-79.824-5.044-109.978 109.978-241.25 129.7-368.176 132.596v-26.916c68.536-33.578 128-94.74 128-164.636 0-9.754-0.758-19.33-2.164-28.696-115.796-76.264-189.836-192.754-189.836-323.304 0-229.75 229.23-416 512-416z"></path>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</symbol>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</defs>&ndash;&gt;-->
+                <!--&lt;!&ndash;</svg>&ndash;&gt;-->
+
+
+                <!--&lt;!&ndash;<div class="footer-wrap">&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;<div class="footer-top group mainfoot">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="twelve columns">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<p><a href="/">Contact Us</a> | <a href="/">Site Map</a></p>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;<div class="footer-top group mobfoot">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="row">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div id="callmob">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<a href="tel:01173600530"><span>&ndash;&gt;-->
+
+                  <!--&lt;!&ndash;<svg class="icon" viewBox="0 0 578.106 578.106">&ndash;&gt;-->
+
+	                    <!--&lt;!&ndash;<use xlink:href="#icon-phone" />&ndash;&gt;-->
+
+                  <!--&lt;!&ndash;</svg> </span>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<span class="icontext">Call Us</span>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div id="mailmob">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<a href="mailto:">&ndash;&gt;-->
+          <!--&lt;!&ndash;<span>&ndash;&gt;-->
+                   <!--&lt;!&ndash;<svg class="icon" viewBox="-223 25 512 512">&ndash;&gt;-->
+	                   <!--&lt;!&ndash;<use xlink:href="#mail" />&ndash;&gt;-->
+                   <!--&lt;!&ndash;</svg>&ndash;&gt;-->
+                 <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<span class="icontext">Email Us</span>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div id="testmob">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<a href="/contact-us">&ndash;&gt;-->
+          <!--&lt;!&ndash;<span>&ndash;&gt;-->
+                   <!--&lt;!&ndash;<svg class="icon" viewBox="0 0 1024 1024">&ndash;&gt;-->
+	                   <!--&lt;!&ndash;<use xlink:href="#bubble" />&ndash;&gt;-->
+                   <!--&lt;!&ndash;</svg>&ndash;&gt;-->
+                 <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<span class="icontext">Testimonials</span>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div id="supportmob">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<a href="/contact-us">&ndash;&gt;-->
+          <!--&lt;!&ndash;<span>&ndash;&gt;-->
+                   <!--&lt;!&ndash;<svg class="icon" viewBox="0 0 1024 1024">&ndash;&gt;-->
+                     <!--&lt;!&ndash;<use xlink:href="#lifebuoy" />&ndash;&gt;-->
+                   <!--&lt;!&ndash;</svg>&ndash;&gt;-->
+                 <!--&lt;!&ndash;</span>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<span class="icontext">Support</span>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;<div class="footer-bottom group">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<div class="row moblowerfoot">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<div class="twelve columns">&ndash;&gt;-->
+                                <!--&lt;!&ndash;<p>&copy; ##currentYear##. Test Responsive Footer UK Ltd. All Rights Reserved | ##seoTags##</p>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;</div>&lt;!&ndash; end footer-div &ndash;&gt;&ndash;&gt;-->
+
+
+
+        <!--</div>&lt;!&ndash; end main-menu-div &ndash;&gt;-->
+
 
     </div><!-- end main-container-div -->
 
+    <div class="map" id="mapDiv"></div> <!-- this div is where the google map will go -->
 
     <script src="http://mysqljs.com/mysql.js"></script>
-    <script async defer	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH7e1P_eSIAOa_Q2bNVJJwj1bV43cmsyY&callback=initMap">
-    </script>
+    <!--<script async defer	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAH7e1P_eSIAOa_Q2bNVJJwj1bV43cmsyY&callback=initMap">-->
+    <!--</script>-->
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><!-- this is for the signup and login page-->
