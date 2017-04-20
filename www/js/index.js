@@ -265,7 +265,11 @@ function loadScript(callback) {
 
 function initMap() {
 
-    navigator.geolocation.getCurrentPosition(geolocationSuccess,geolocationError,{ enableHighAccuracy: true });
+    navigator.geolocation.getCurrentPosition(geolocationSuccess,geolocationError,{ maximumAge:60000, timeout:5000, enableHighAccuracy: true });
+
+    console.log(geolocationError);
+
+    console.log(navigator.geolocation.getCurrentPosition(geolocationSuccess,geolocationError,{ enableHighAccuracy: true }));
 
     var mapOptions 		= {zoom: zoom, center: curLatLng};
 
