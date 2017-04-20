@@ -389,7 +389,7 @@ textarea {
     margin: 0 auto;
     text-align: center;
     height: 100px;
-    background-color: #666;
+    background-color: #1ab188;
 }
 
 
@@ -410,7 +410,7 @@ html, body 	{ height: 100vh; } 	/* 100% of Viewport Height 		 	*/
 
 #foot {
     height: 10vh;
-    background: red;
+    background: 1ab188;
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -432,7 +432,7 @@ html, body 	{ height: 100vh; } 	/* 100% of Viewport Height 		 	*/
     align-content: center;
     margin: 0;
     padding: 0;
-    background-color: blueviolet;
+    background-color: 1ab188;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;

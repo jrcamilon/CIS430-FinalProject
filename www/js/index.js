@@ -247,7 +247,7 @@ function checkpassword() {
 // These are the functions for all the maps stuff
 function loadScript(callback) {
     var script 		 = undefined;
-    var googleAPIKey = "AIzaSyAgQissl5FSGet4lMqGtMsMMcwbtlVgeWU";
+    var googleAPIKey = "AIzaSyAeae-IEvCB_ruQ31dwfzm6Rg-irZYoF2M";
     var googleAPIUrl = "https://maps.googleapis.com/maps/api/js";
 
     var srcURL 		 = googleAPIUrl + '?key=' + googleAPIKey
@@ -367,7 +367,7 @@ function newMarker(curLatLng) {
             google.maps.event.removeListener(boundsListener);
         });
 
-        map.setCenter(cur)
+        map.setCenter(curLatLng);
 
 
 
