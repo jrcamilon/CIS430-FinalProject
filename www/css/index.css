@@ -160,7 +160,7 @@ label {
     transition: all 0.25s ease;
     -webkit-backface-visibility: hidden;
     pointer-events: none;
-    font-size: 22px;
+    font-size: 19px;
 }
 label .req {
     margin: 2px;
@@ -411,9 +411,57 @@ html, body 	{ height: 100vh; } 	/* 100% of Viewport Height 		 	*/
 #foot {
     height: 10vh;
     background: red;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
 }
 
 #liststuff {
-    background: yellow;
+    background: white;
     height: 20vh;
+}
+
+#foot li {
+    display: inline;
+    text-align: center;
+    width:100%;
+}
+
+
+#foot ul {
+    align-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+
+}
+
+.button-main-menu {
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    padding: 15px 0;
+    /*font-size: 2rem;*/
+    /*font-weight: 600;*/
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    background: #1ab188;
+    color: #ffffff;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-appearance: none;
+    border-radius: 5px;
+
+    width:100%;
+    height: 100%;
+}
+
+
+
+.button-main-menu:hover, .button-main-menu:focus {
+    background: #179b77;
 }
