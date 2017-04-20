@@ -405,12 +405,16 @@ textarea {
 /*end loading screen*/
 
 html, body 	{ height: 100vh; } 	/* 100% of Viewport Height 		 	*/
+
+
+
+
 #header 	{ height:  10vh; } 	/* header gets some height       	*/
 #mapDiv 	{ height:  60vh; }  /* map gets some height          	*/
 
 #foot {
     height: 10vh;
-    background: 1ab188;
+    background: #1ab188;
     display: flex;
     width: 100%;
     flex-direction: row;
