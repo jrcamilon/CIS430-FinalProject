@@ -110,18 +110,44 @@
 
     </div> <!-- form-content -->
 
-    <div id="main-menu" class="tabItem active">
+    <!--find group-->
+    <div id="slide-menu" class="menu-side active">
+
+        <div>
+            <img src="" alt="">
+            <p id="sessionUser">Not Logged In</p>
+
+        </div>
+
+        <div class="slidemenuelements">
+            <ul>
+                <li id="slidemenu-profile">Profile</li>
+                <li id="slidemenu-myclasses">My Classes</li>
+            </ul>
+
+        </div>
+
+        <div class="slide-menu-footer">
+            <p id="logoutbtn">LOGOUT</p>
+        </div>
+
+
+
+    </div>
+
+
+    <div id="main-menu" class="tabItem active homemenu">
 
             <div id="header" class="headericon">
+                <img id="menuicon" src="img/back.svg" class="backicon" alt="">
                 <img src="img/top-header-logo.svg" alt="">
             </div>
 
             <div class="bodypage">
 
-
-                <div class="map" id="mapDiv"></div> <!-- this div is where the google map will go -->
-
-                <div id="liststuff"><h1>TEST</h1></div>
+                <!--<!- <div class="map" id="mapDiv"></div>- this div is where the google map will go &ndash;&gt;-->
+                <div class="map" id="mapDiv"></div>
+                <div id="liststuff"><h1></h1></div>
 
             </div>
 
@@ -207,6 +233,87 @@
             </ul>
 
         </div>
+
+
+    </div>
+
+    <div id="profile" class="inactive">
+
+        <div id="header" class="headericon">
+            <img id="profile-backbtn" src="img/back.svg" class="backicon" alt="">
+            <img src="img/find-icon.svg" alt="" class="centericon">
+        </div>
+
+
+        <div class="bodypage">
+
+            <h3>PROFILE</h3>
+            <p style="color: #000;">
+                Red is the color at the longer-wavelengths end of the spectrum of
+                visible light next to orange, at the opposite end from violet. Red
+                color has a predominant light wavelength of roughly 620–740
+                nanometers. Light with a longer wavelength than red but shorter
+                than terahertz radiation and microwave is callaed infrared.
+
+
+            </p>
+
+
+        </div>
+
+
+        <div id="foot" class="foot">
+            <ul>
+                <li><button id="page3-clearbtn" class="tabLink button-main-menu">CLEAR</button></li>
+                <li><button id="page3-donebtn" class="tabLink button-main-menu">SEARCH</button></li>
+            </ul>
+
+        </div>
+
+
+    </div>
+
+
+    <div id="myclasses" class="inactive">
+
+        <div id="header" class="headericon">
+            <img id="myclasses-backbtn" src="img/back.svg" class="backicon" alt="">
+            <img src="img/find-icon.svg" alt="" class="centericon">
+        </div>
+
+
+        <div class="bodypage">
+
+            <h3>MyClasses</h3>
+            <p style="color: #000;">
+                Red is the color at the longer-wavelengths end of the spectrum of
+                visible light next to orange, at the opposite end from violet. Red
+                color has a predominant light wavelength of roughly 620–740
+                nanometers. Light with a longer wavelength than red but shorter
+                than terahertz radiation and microwave is callaed infrared.
+
+
+            </p>
+
+
+        </div>
+
+
+        <div id="foot" class="foot">
+            <ul>
+                <li><button id="page4-clearbtn" class="tabLink button-main-menu">CLEAR</button></li>
+                <li><button id="page4-donebtn" class="tabLink button-main-menu">SEARCH</button></li>
+            </ul>
+
+        </div>
+
+
+    </div>
+
+
+    <div id="logout-page" class="inactive">
+
+      <p>LOGOUT</p>
 
 
     </div>

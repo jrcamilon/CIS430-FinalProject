@@ -5,3 +5,66 @@
 .active {
     display: block;
 }
+
+.headericon #slideouticon {
+    border: red solid;
+    float: left;
+    margin: auto;
+
+}
+
+.headericon img {
+    border:red solid;
+    float: none;
+    padding-right: 13%;
+}
+
+
+
+
+.menu-side {
+    background-color: #333;
+    border-right: 1px solid #000;
+    color: whitesmoke;
+    position: fixed;
+    top: 0;
+    left: -400px;
+    width: 400px;
+    height: 100%;
+    padding: 10px;
+}
+
+.homemenu {
+    overflow-x: hidden;
+    position: relative;
+
+}
+
+.menu-open {
+    left: 400px;
+}
+
+.menu-side-open{
+    left: 0px;
+}
+
+.headericon a{
+    border: red solid;
+}
+
+.homemenu {
+
+    -webkit-transition: left 0.1s ease;
+    -moz-transition: left 0.1s ease;
+    transition: left 0.1s ease;
+
+}
+
+.menu-side {
+
+    -webkit-transition: left 0.1s ease;
+    -moz-transition: left 0.1s ease;
+    transition: left 0.1s ease;
+
+}
+

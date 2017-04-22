@@ -42,11 +42,11 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
     // alert("onDeviceReady() executed");
 
-    // $('#main-menu').hide();
-    $('#login-signup').hide();
+    $('#main-menu').hide();
 
     loadScript('initMap');
 
+    // generateSessionUserInfo();
 
     mapElement 	   = document.getElementById('mapDiv');
 
@@ -206,6 +206,8 @@ function processQueryResult(queryReturned) {
             document.getElementById('login-welcome').innerHTML =
                 'Welcome, ' + json[0].fname + '!' ;
 
+            grabCurrentUserInformation(json);
+
             //CONTINUE TO MAIN MENU
 
             $('#login-signup').hide();
@@ -222,14 +224,16 @@ function loadMainMenu(){
     $('.form').hide();
     $('#main-menu').show();
 
+    generateSessionUserInfo();
+
     loadScript('initMap');
 
 }
 
 function grabCurrentUserInformation(json) {
-    var curSessionUser      = json[0].fname + ' ' + json[0].lname;
-    var crSessionEmail      = json[0].email;
-    var crSessionPassword   = json[0].password;
+    curSessionUser      = json[0].fname + ' ' + json[0].lname;
+    crSessionEmail      = json[0].email;
+    crSessionPassword   = json[0].password;
 
     console.log('currently logged in as: ' + curSessionUser);
 
@@ -371,10 +375,14 @@ function newMarker(curLatLng) {
         });
 
         map.setCenter(curLatLng);
+}
 
+function generateSessionUserInfo() {
+
+    console.log('generating session user');
+
+    $('#sessionUser').html(curSessionUser);
+    console.log(curSessionUser);
 
 
 }
-
-
-
