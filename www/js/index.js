@@ -42,12 +42,11 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
     // alert("onDeviceReady() executed");
 
-    $('#header').hide();
-    $('#foot').hide();
-    $('#liststuff').hide();
-    $('.form').hide();
+    // $('#main-menu').hide();
+    $('#login-signup').hide();
 
-    loadMainMenu();
+    loadScript('initMap');
+
 
     mapElement 	   = document.getElementById('mapDiv');
 
@@ -157,6 +156,7 @@ function executeSQLStatement(sqlStatement, sqlStatementType){
             if(sqlStatementType == 'insert'){
                 console.log(data);
                 console.log('insert complete');
+
             } else if (sqlStatementType == 'select'){
                 processQueryResult(data);
                 console.log('select statement complete, success! returned JSON objects')
@@ -208,6 +208,8 @@ function processQueryResult(queryReturned) {
 
             //CONTINUE TO MAIN MENU
 
+            $('#login-signup').hide();
+
             loadMainMenu();
         }
 
@@ -217,15 +219,10 @@ function processQueryResult(queryReturned) {
 function loadMainMenu(){
 
 
-
     $('.form').hide();
-    $('#header').show();
-    $('#foot').show();
-    $('#liststuff').show();
+    $('#main-menu').show();
 
     loadScript('initMap');
-
-
 
 }
 
@@ -246,6 +243,8 @@ function checkpassword() {
 
 // These are the functions for all the maps stuff
 function loadScript(callback) {
+
+    console.log('firing script');
     var script 		 = undefined;
     var googleAPIKey = "AIzaSyAeae-IEvCB_ruQ31dwfzm6Rg-irZYoF2M";
     var googleAPIUrl = "https://maps.googleapis.com/maps/api/js";
@@ -376,3 +375,6 @@ function newMarker(curLatLng) {
 
 
 }
+
+
+

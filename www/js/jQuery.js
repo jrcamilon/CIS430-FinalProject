@@ -1,6 +1,4 @@
-/**
- * Created by jrcamilon on 4/17/17.
- */
+
 
 //JQuery Scripts to handle hiding and showing DIVS
 $('.form').find('input, textarea').on('keyup blur focus', function (e) {
