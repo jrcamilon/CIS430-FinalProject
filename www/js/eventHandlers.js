@@ -1,11 +1,15 @@
 
 
+// save the divs into variables for easy calling
+
 var mainMenu        = $('#main-menu');
 var profilePage     = $('#profile');
 var hostGroupPage   = $('#page1');
 var findGroupPage   = $('#page2');
 var myClassesPage   = $('#myclasses');
 var logoutPage      = $('#logout-page');
+
+var mainApp         = $('#mainApp');
 
 
 $('#host-group-button').on('click', function() {
@@ -37,7 +41,6 @@ $('#findGroupPage-backBtn').on('click', function() {
     goBackToMain();
 });
 
-
 $('#hostGroupPage-OKBtn').on('click', function() {
 
     $('#main-menu').show();
@@ -54,15 +57,6 @@ $('#findGroupPage-OKBtn').on('click', function() {
 
     goBackToMain();
 });
-
-function goBackToMain() {
-    $('#page2').hide();
-    $('#page1').hide();
-    $('#profile').hide();
-    $('#myclasses').hide();
-
-    $('#main-menu').show();
-}
 
 $('#menuicon').on('click', function() {
 
@@ -115,25 +109,36 @@ $('#myclasses-backbtn').on('click', function() {
 $('#profile-backbtn').on('click', function() {
 
     console.log('back button pressed');
-
     goBackToMain();
-
 
 });
 
+//Logout event handler for when user clicks logout from slider menu
 $('#logoutbtn').on('click', function() {
 
     console.log('logout pressed');
+    // $('.menu-side').toggleClass('menu-side-open');
+    // $('#main-menu').toggleClass('menu-open');
+    // mainMenu.hide();
+    // profilePage.hide();
+    // hostGroupPage.hide();
+    // findGroupPage.hide();
+    // myClassesPage.hide();
 
-    $('.menu-side').toggleClass('menu-side-open');
-    $('#main-menu').toggleClass('menu-open');
-    mainMenu.hide();
-    profilePage.hide();
-    hostGroupPage.hide();
-    findGroupPage.hide();
-    myClassesPage.hide();
+    $('#mainApp').hide();
 
     $('#login-signup').show();
 
+    userLogout();
+
 });
+
+function goBackToMain() {
+    $('#page2').hide();
+    $('#page1').hide();
+    $('#profile').hide();
+    $('#myclasses').hide();
+
+    $('#main-menu').show();
+}
 

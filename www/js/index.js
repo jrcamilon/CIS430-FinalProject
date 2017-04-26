@@ -3,7 +3,6 @@
 "use strict";
 
 //Global Variables
-
 var dbHost          = "dmazzola.com";
 var dbLogin         = "ecamilon";
 var dbLoginPass     = "ecam5470";
@@ -41,16 +40,18 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady(){
     // alert("onDeviceReady() executed");
-
-    $('#mainApp').hide();
-
-    loadScript('initMap');
-
-    mapElement 	   = document.getElementById('mapDiv');
-
 }
+function initialize() {
 
+    //hide everything but the login form div and initialize the map
+    $('#mainApp').hide();
+    loadScript('initMap');
+    mapElement 	   = document.getElementById('mapDiv');
+    statusBarHide();
+}
+//cordova made finction to hide the status bar for both ios and android mobile phones.
 function statusBarHide(){
+
     //This removes the status bar for android
     if (cordova.platformId == 'android') {
         StatusBar.backgroundColorByHexString("#333");
@@ -69,7 +70,7 @@ function statusBarHide(){
 
 function createAccountClick(form) {
 
-    console.log('login button pressed');
+    console.log('user clickedlogin button pressed');
     //Verify that the values of the form are actually correct, no empty fields
     try  {
 
@@ -88,10 +89,10 @@ function createAccountClick(form) {
         else {
             //create the sql insert statement if the values the user typed are all valid
             var statementBegin = "INSERT INTO users (fname,lname,email,password) VALUES(";
-            var com = ",";
-            var char = "'";
-            var statementEnd = ");";
-            var sqlStatement = statementBegin.concat(char,
+            var            com = ",";
+            var           char = "'";
+            var   statementEnd = ");";
+            var   sqlStatement = statementBegin.concat(char,
                 firstName,char,com,char,
                 lastName,char,com,char,
                 email,char,com,char,
@@ -117,28 +118,24 @@ function createAccountClick(form) {
     }
 
 }
-
+//function to check if the email entered is an ASU Email
 function checkEnteredEmail() {
-    var emailSplit = email.split('@');
-    return emailSplit[1] == 'asu.edu';
+    var         emailSplit = email.split('@');
+    return  emailSplit[1] == 'asu.edu';
 }
 
 function loginButtonClick(form){
 
     console.log('login button pressed');
-
     loginEmail          = document.getElementById('login-email').value;
     loginPassword       = document.getElementById('login-password').value;
 
     var statementBegin  = "SELECT * FROM users where email = '";
     var statementEnd    = "';";
 
-    var sqlStatement = statementBegin.concat(loginEmail,statementEnd);
-
-    console.log('about to execute statement');
+    var sqlStatement    = statementBegin.concat(loginEmail,statementEnd);
 
     executeSQLStatement(sqlStatement, 'select');
-
 }
 
 function executeSQLStatement(sqlStatement, sqlStatementType){
@@ -168,7 +165,7 @@ function processQueryResult(queryReturned) {
     console.log('processing query results');
 
     var myObject = JSON.stringify(queryReturned.Result, null, 2);
-    var count = Object.keys(myObject).length;
+    var count    = Object.keys(myObject).length;
 
 
     if (queryReturned.Success == false) {
@@ -218,14 +215,11 @@ function processQueryResult(queryReturned) {
 
 function loadMainMenu(){
 
+    $('.form').hide();           //hide the login and signup form
+    $('#mainApp').show();        //show the main app with all divs
 
-    $('.form').hide();
-    $('#mainApp').show();
-
-
-    generateSessionUserInfo();
-
-    loadScript('initMap');
+    generateSessionUserInfo();   //get the user info and save them to a variable
+    loadScript('initMap');       // Initialize the map
 
 }
 
@@ -243,8 +237,7 @@ function checkpassword() {
     return returnedPassword === enteredPassword;
 }
 
-
-// These are the functions for all the maps stuff
+// MAP: These are the functions for all the maps stuff
 function loadScript(callback) {
 
     console.log('firing script');
@@ -264,19 +257,15 @@ function loadScript(callback) {
     document.body.appendChild(script);
 }
 
-
 function initMap() {
 
     navigator.geolocation.getCurrentPosition(geolocationSuccess,geolocationError,{ maximumAge:60000, timeout:5000, enableHighAccuracy: true });
 
     console.log(geolocationError);
-
     console.log(navigator.geolocation.getCurrentPosition(geolocationSuccess,geolocationError,{ enableHighAccuracy: true }));
 
     var mapOptions 		= {zoom: zoom, center: curLatLng};
-
-    map = new google.maps.Map(mapElement, mapOptions);
-
+    map                 = new google.maps.Map(mapElement, mapOptions);
     var markerOptions 	= {position: curLatLng, map: map};
 
     marker = new google.maps.Marker(markerOptions);
@@ -286,6 +275,7 @@ function initMap() {
         currentLong = event.latLng.lng();
         marker.setPosition(event.latLng);
         map.setCenter(event.latLng);
+
     });
 
 
@@ -300,7 +290,7 @@ function geolocationSuccess(position) {
 }
 
 function geolocationError() {
-    alert("Error in geolocation subsystem!");
+    // alert("Error in geolocation subsystem!");
 }
 
 function mapGeolocation() {
@@ -376,6 +366,9 @@ function newMarker(curLatLng) {
         map.setCenter(curLatLng);
 }
 
+//END MAP: End of map section code
+
+//Code for user sessions
 function generateSessionUserInfo() {
 
     console.log('generating session user');
@@ -384,5 +377,13 @@ function generateSessionUserInfo() {
     console.log(curSessionUser);
 }
 
-//function to hide all the pages except the login page.
+function userLogout(){
+    // reset the current session and log the user out
+    curSessionUser  = undefined; //this is the current session user e.g. Tony Stark;
+    crSessionEmail  = undefined; // this is the current session user's email e.g. logged in as: ts@asu.ed
+    crSessionPassword = undefined;
+
+
+}
+
 
