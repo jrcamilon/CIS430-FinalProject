@@ -1,139 +1,131 @@
-.headericon img {
-    padding-top: 1%;
-    height: 100%;
-    width: 100%;
-    padding-bottom: 1%;
+/*#page1 div, span, applet, object, iframe,*/
+/*h1, h2, h3, h4, h5, h6, p, blockquote, pre,*/
+/*a, abbr, acronym, address, big, cite, code,*/
+/*del, dfn, em, font, img, ins, kbd, q, s, samp,*/
+/*small, strike, strong, sub, sup, tt, var,*/
+/*dl, dt, dd, ol, ul, li,*/
+/*fieldset, form, label, legend,*/
+/*table, caption, tbody, tfoot, thead, tr, th, td {*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*border: 0;*/
+    /*outline: 0;*/
+    /*font-weight: inherit;*/
+    /*font-style: inherit;*/
+    /*font-size: 100%;*/
+    /*font-family: inherit;*/
+    /*vertical-align: baseline;*/
+/*}*/
+/*!* remember to define focus styles! *!*/
+/*#page1 :focus {*/
+    /*outline: 0;*/
+/*}*/
+/*#page1 body {*/
+    /*line-height: 1;*/
+    /*color: black;*/
+    /*background: white;*/
+/*}*/
+/*#page1 ol, ul {*/
+    /*list-style: none;*/
+/*}*/
+/*!* tables still need 'cellspacing="0"' in the markup *!*/
+/*#page1 table {*/
+    /*border-collapse: separate;*/
+    /*border-spacing: 0;*/
+/*}*/
+/*#page1 caption, th, td {*/
+    /*text-align: left;*/
+    /*font-weight: normal;*/
+/*}*/
 
-    width:auto;
-}
+/*#page1 q:before, q:after {*/
+    /*content: "";*/
+/*}*/
+/*#page1 blockquote, q {*/
+    /*quotes: "" "";*/
+/*}*/
 
+/*#page1 p {*/
+    /*text-align: left;*/
+/*}*/
 
-#page1 div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-weight: inherit;
-    font-style: inherit;
-    font-size: 100%;
-    font-family: inherit;
-    vertical-align: baseline;
-}
-/* remember to define focus styles! */
-#page1 :focus {
-    outline: 0;
-}
-#page1 body {
-    line-height: 1;
-    color: black;
-    background: white;
-}
-#page1 ol, ul {
-    list-style: none;
-}
-/* tables still need 'cellspacing="0"' in the markup */
-#page1 table {
-    border-collapse: separate;
-    border-spacing: 0;
-}
-#page1 caption, th, td {
-    text-align: left;
-    font-weight: normal;
-}
+/*#page1 .backicon {*/
+    /*float: left;*/
+/*}*/
 
-#page1 q:before, q:after {
-    content: "";
-}
-#page1 blockquote, q {
-    quotes: "" "";
-}
+/*#page1 .centericon {*/
+    /*clear: right;*/
+    /*padding-right: 13%;*/
+/*}*/
 
-#page1 p {
-    text-align: left;
-}
+/*.headericon img {*/
+    /*padding-top: 1%;*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*padding-bottom: 1%;*/
 
-#page1 .backicon {
-    float: left;
-}
-
-#page1 .centericon {
-    clear: right;
-    padding-right: 13%;
-}
-
-.headericon img {
-    padding-top: 1%;
-    height: 100%;
-    width: 100%;
-    padding-bottom: 1%;
-
-    width:auto;
-}
+    /*width:auto;*/
+/*}*/
 
 
-#page2 div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-weight: inherit;
-    font-style: inherit;
-    font-size: 100%;
-    font-family: inherit;
-    vertical-align: baseline;
-}
-/* remember to define focus styles! */
-#page2 :focus {
-    outline: 0;
-}
-#page2 body {
-    line-height: 1;
-    color: black;
-    background: white;
-}
-#page2 ol, ul {
-    list-style: none;
-}
-/* tables still need 'cellspacing="0"' in the markup */
-#page2 table {
-    border-collapse: separate;
-    border-spacing: 0;
-}
-#page2 caption, th, td {
-    text-align: left;
-    font-weight: normal;
-}
+/*#page2 div, span, applet, object, iframe,*/
+/*h1, h2, h3, h4, h5, h6, p, blockquote, pre,*/
+/*a, abbr, acronym, address, big, cite, code,*/
+/*del, dfn, em, font, img, ins, kbd, q, s, samp,*/
+/*small, strike, strong, sub, sup, tt, var,*/
+/*dl, dt, dd, ol, ul, li,*/
+/*fieldset, form, label, legend,*/
+/*table, caption, tbody, tfoot, thead, tr, th, td {*/
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*border: 0;*/
+    /*outline: 0;*/
+    /*font-weight: inherit;*/
+    /*font-style: inherit;*/
+    /*font-size: 100%;*/
+    /*font-family: inherit;*/
+    /*vertical-align: baseline;*/
+/*}*/
+/*!* remember to define focus styles! *!*/
+/*#page2 :focus {*/
+    /*outline: 0;*/
+/*}*/
+/*#page2 body {*/
+    /*line-height: 1;*/
+    /*color: black;*/
+    /*background: white;*/
+/*}*/
+/*#page2 ol, ul {*/
+    /*list-style: none;*/
+/*}*/
+/*!* tables still need 'cellspacing="0"' in the markup *!*/
+/*#page2 table {*/
+    /*border-collapse: separate;*/
+    /*border-spacing: 0;*/
+/*}*/
+/*#page2 caption, th, td {*/
+    /*text-align: left;*/
+    /*font-weight: normal;*/
+/*}*/
 
-#page2 q:before, q:after {
-    content: "";
-}
-#page2 blockquote, q {
-    quotes: "" "";
-}
+/*#page2 q:before, q:after {*/
+    /*content: "";*/
+/*}*/
+/*#page2 blockquote, q {*/
+    /*quotes: "" "";*/
+/*}*/
 
-#page2 p {
-    text-align: left;
-}
+/*#page2 p {*/
+    /*text-align: left;*/
+/*}*/
 
-#page2 .backicon {
-    float: left;
-}
+/*#page2 .backicon {*/
+    /*float: left;*/
+/*}*/
 
-#page2 .centericon {
-    c2lear: right;
-    padding-right: 13%;
-}
+/*#page2 .centericon {*/
+    /*c2lear: right;*/
+    /*padding-right: 13%;*/
+/*}*/
+
+

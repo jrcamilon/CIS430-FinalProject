@@ -10,16 +10,22 @@
     border: red solid;
     float: left;
     margin: auto;
-
 }
+
+/*this is for all the header icon*/
 
 .headericon img {
-    border:red solid;
+    padding-top: 1%;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 1%;
     float: none;
-    padding-right: 13%;
+    width:auto;
 }
 
-
+#header {
+    background-color: #1ab188;
+}
 
 
 .menu-side {
@@ -37,7 +43,6 @@
 .homemenu {
     overflow-x: hidden;
     position: relative;
-
 }
 
 .menu-open {
@@ -53,18 +58,14 @@
 }
 
 .homemenu {
-
     -webkit-transition: left 0.1s ease;
     -moz-transition: left 0.1s ease;
     transition: left 0.1s ease;
-
 }
 
 .menu-side {
-
     -webkit-transition: left 0.1s ease;
     -moz-transition: left 0.1s ease;
     transition: left 0.1s ease;
-
 }
 

@@ -46,5 +46,3 @@ $('.tab a').on('click', function (e) {
 
 });
 
-//slideout menu - move to another file
-

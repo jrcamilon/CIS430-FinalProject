@@ -1,4 +1,6 @@
-﻿var MySql = {
+﻿// MySql script for connecting to the DB
+
+var MySql = {
     _internalCallback : function() { console.log("Callback not set")},
     Execute: function (Host, Username, Password, Database, Sql, Callback) {
         MySql._internalCallback = Callback;

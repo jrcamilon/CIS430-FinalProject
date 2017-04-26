@@ -4,10 +4,10 @@
 
 //Global Variables
 
-var dbHost = "dmazzola.com";
-var dbLogin = "ecamilon";
-var dbLoginPass = "ecam5470";
-var dbName = "test_db_ecamilon";
+var dbHost          = "dmazzola.com";
+var dbLogin         = "ecamilon";
+var dbLoginPass     = "ecam5470";
+var dbName          = "test_db_ecamilon";
 
 var firstName       = undefined;
 var lastName        = undefined;
@@ -42,11 +42,9 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
     // alert("onDeviceReady() executed");
 
-    $('#main-menu').hide();
+    $('#mainApp').hide();
 
     loadScript('initMap');
-
-    // generateSessionUserInfo();
 
     mapElement 	   = document.getElementById('mapDiv');
 
@@ -222,7 +220,8 @@ function loadMainMenu(){
 
 
     $('.form').hide();
-    $('#main-menu').show();
+    $('#mainApp').show();
+
 
     generateSessionUserInfo();
 
@@ -329,17 +328,17 @@ function newMarker(curLatLng) {
 
         // Multiple Markers
         var markers = [ ['London Eye, London', 33.424564, -111.928001],
-            ['Palace of Westminster, London', currentLat,currentLong]
+                        ['Your Location', currentLat,currentLong]
         ];
 
         // Info Window Content
         var infoWindowContent = [
             ['<div class="info_content">' +
-            '<h3>London Eye</h3>' +
-            '<p>The London Eye is a giant Ferris wheel situated on the banks of the River Thames. The entire structure is 135 metres (443 ft) tall and the wheel has a diameter of 120 metres (394 ft).</p>' +        '</div>'],
+            '<h3>Arizona State University</h3>' +
+            '<p>content.</p>' +        '</div>'],
             ['<div class="info_content">' +
-            '<h3>Palace of Westminster</h3>' +
-            '<p>The Palace of Westminster is the meeting place of the House of Commons and the House of Lords, the two houses of the Parliament of the United Kingdom. Commonly known as the Houses of Parliament after its tenants.</p>' +
+            '<h3>Your Location</h3>' +
+            '<p>Your Location</p>' +
             '</div>']
         ];
 
@@ -383,6 +382,7 @@ function generateSessionUserInfo() {
 
     $('#sessionUser').html(curSessionUser);
     console.log(curSessionUser);
-
-
 }
+
+//function to hide all the pages except the login page.
+

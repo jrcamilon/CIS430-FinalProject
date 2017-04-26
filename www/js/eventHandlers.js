@@ -1,11 +1,11 @@
 
 
-var mainMenu = $('#main-menu');
-var profilePage = $('#profile');
-var hostGroupPage = $('#page1');
-var findGroupPage = $('#page2');
-var myClassesPage = $('#myclasses');
-var logoutPage = $('#logout-page');
+var mainMenu        = $('#main-menu');
+var profilePage     = $('#profile');
+var hostGroupPage   = $('#page1');
+var findGroupPage   = $('#page2');
+var myClassesPage   = $('#myclasses');
+var logoutPage      = $('#logout-page');
 
 
 $('#host-group-button').on('click', function() {
@@ -134,7 +134,6 @@ $('#logoutbtn').on('click', function() {
     myClassesPage.hide();
 
     $('#login-signup').show();
-
 
 });
 
