@@ -30,11 +30,74 @@ var map 			= undefined;
 var curLatLng 		= undefined;
 var marker 			= undefined;
 var zoom 			= 18;
+var markerOptions   = undefined;
 
 
 var curSessionUser  = undefined; //this is the current session user e.g. Tony Stark;
 var crSessionEmail  = undefined; // this is the current session user's email e.g. logged in as: ts@asu.ed
 var crSessionPassword = undefined; // this is the current session user's password.
+
+//test code
+var testOBJ = {
+    class: "CIS430",
+    host: "Tony Stark",
+    description: "none",
+    long: 33.277342,
+    lat: -111.789769
+};
+
+var testOBJ2 = {
+    class: "ACC444",
+    host: "Bruce Banner",
+    description: "none",
+    long: 33.263169,
+    lat: -111.789871
+};
+
+var arr = [testOBJ, testOBJ2];
+
+function insertHostToDB() {
+
+    var className;
+    var hostName;
+    var locationName;
+    var description;
+    var long;
+    var lat;
+
+
+    //db table headers are (SID, Class, Host, Location, Description, Long, Lat)
+    var statementBegin = "INSERT INTO users (className,hostName,,location,description,long,lat) VALUES(";
+    var            com = ",";
+    var           char = "'";
+    var   statementEnd = ");";
+    var   sqlStatement = statementBegin.concat(char,
+        className,char,com,char,
+        hostName,char,com,char,
+        locationName,char,com,char,
+        description,char,com,char,
+        long, char,com,char,
+        lat, char,statementEnd);
+
+    executeSQLStatement(sqlStatement, 'insert');
+
+    //prompt user that you have now created a session to host
+
+}
+
+function getHostClassesFromDB() {
+
+    // button pressed load the classes
+    // query to load ALL the classes
+    // process query results, post all the classes to the map.
+
+}
+
+function generateClassLocations() {
+
+}
+//end test code
+
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -45,9 +108,11 @@ function initialize() {
 
     //hide everything but the login form div and initialize the map
     $('#mainApp').hide();
-    loadScript('initMap');
+
+    // loadScript('initMap');
+
     mapElement 	   = document.getElementById('mapDiv');
-    statusBarHide();
+    // statusBarHide();
 }
 //cordova made finction to hide the status bar for both ios and android mobile phones.
 function statusBarHide(){
@@ -139,6 +204,7 @@ function loginButtonClick(form){
 }
 
 function executeSQLStatement(sqlStatement, sqlStatementType){
+
     console.log('executing SQL statement.. connecting to DB');
     MySql.Execute(
         dbHost,
@@ -205,7 +271,7 @@ function processQueryResult(queryReturned) {
 
             //CONTINUE TO MAIN MENU
 
-            $('#login-signup').hide();
+            // $('#login-signup').hide();
 
             loadMainMenu();
         }
@@ -216,7 +282,9 @@ function processQueryResult(queryReturned) {
 function loadMainMenu(){
 
     $('.form').hide();           //hide the login and signup form
-    $('#mainApp').show();        //show the main app with all divs
+    $('#mainApp').show();       //show the main app with all divs
+    $('body').toggleClass('bg-image');
+    console.log('toggled');
 
     generateSessionUserInfo();   //get the user info and save them to a variable
     loadScript('initMap');       // Initialize the map
@@ -264,9 +332,9 @@ function initMap() {
     console.log(geolocationError);
     console.log(navigator.geolocation.getCurrentPosition(geolocationSuccess,geolocationError,{ enableHighAccuracy: true }));
 
-    var mapOptions 		= {zoom: zoom, center: curLatLng};
+    var mapOptions 		= {zoom: zoom, center: curLatLng };
     map                 = new google.maps.Map(mapElement, mapOptions);
-    var markerOptions 	= {position: curLatLng, map: map};
+    markerOptions 	= {position: curLatLng, map: map, draggable: false};
 
     marker = new google.maps.Marker(markerOptions);
 
@@ -296,15 +364,22 @@ function geolocationError() {
 function mapGeolocation() {
 
     curLatLng = new google.maps.LatLng({ lat: Number(currentLat), lng: Number(currentLong) });
+
     map.panTo(curLatLng);
     marker.setPosition(curLatLng);
 
-    console.log('current latitude is: ' + currentLat);
-    console.log('current longtitude is: ' + currentLong);
-    console.log('current lat long is: +' + curLatLng);
+
+
+
+    console.log('mapGeolocation() current latitude is: ' + currentLat);
+    console.log('mapGeolocation() current longtitude is: ' + currentLong);
+    console.log('mapGeolocation() current lat long is: +' + curLatLng);
 
     newMarker(curLatLng);
 }
+
+
+
 
 function newMarker(curLatLng) {
 
@@ -317,20 +392,19 @@ function newMarker(curLatLng) {
         // map.setTilt(45);
 
         // Multiple Markers
-        var markers = [ ['London Eye, London', 33.424564, -111.928001],
+        var markers = [ ['ASU, Tempe', 33.424564, -111.928001],
+                        ['Corner, Location', arr[0].long, arr[0].lat],
                         ['Your Location', currentLat,currentLong]
         ];
+        //load markers
+
+
 
         // Info Window Content
         var infoWindowContent = [
-            ['<div class="info_content">' +
-            '<h3>Arizona State University</h3>' +
-            '<p>content.</p>' +        '</div>'],
-            ['<div class="info_content">' +
-            '<h3>Your Location</h3>' +
-            '<p>Your Location</p>' +
-            '</div>']
-        ];
+            ['<div class="info_content">' + '<h3>Arizona State University</h3>' + '<p>content.</p>' + '</div>'],
+            ['<div class="info_content">' + '<h3>Corner Store</h3>' + '<p>content.</p>' + '</div>'],
+            ['<div class="info_content">' + '<h3>Your Location</h3>' + '<p>Your Location</p>' + '</div>'] ];
 
         // Display multiple markers on a map
         var infoWindow = new google.maps.InfoWindow(), marker, i;
@@ -338,23 +412,31 @@ function newMarker(curLatLng) {
         // Loop through our array of markers & place each one on the map
         for( i = 0; i < markers.length; i++ ) {
             var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+
             bounds.extend(position);
+
             marker = new google.maps.Marker({
+
                 position: position,
                 map: map,
                 title: markers[i][0]
+
             });
 
             // Allow each marker to have an info window
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
+
                     infoWindow.setContent(infoWindowContent[i][0]);
                     infoWindow.open(map, marker);
+
+                    //display to the liststuff div
+
                 }
             })(marker, i));
 
             // Automatically center the map fitting all markers on the screen
-            map.fitBounds(bounds);
+            // map.fitBounds(bounds);
         }
 
         // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
@@ -375,6 +457,26 @@ function generateSessionUserInfo() {
 
     $('#sessionUser').html(curSessionUser);
     console.log(curSessionUser);
+
+    loadProfilePic();
+
+
+}
+
+function loadProfilePic() {
+
+    if(curSessionUser == 'Tony Stark'){
+
+        $('#profilePicture').attr("src","http://vignette2.wikia.nocookie.net/marvelmovies/images/8/87/AoU_Tony_Stark_portal.png/revision/latest?cb=20150427084736");
+    }
+    else {
+
+        $('#profilePicture').attr("src","img/profile-image.svg");
+    }
+
+    //if theres a JSON object for pictures then we can also load that in, but for now we'll
+    //only give tony a picture
+
 }
 
 function userLogout(){
@@ -383,7 +485,13 @@ function userLogout(){
     crSessionEmail  = undefined; // this is the current session user's email e.g. logged in as: ts@asu.ed
     crSessionPassword = undefined;
 
+    //clear the welcome signup text. set it back to "Welcome" message
+    document.getElementById('login-welcome').innerHTML = 'Welcome';
+
 
 }
 
-
+//adds and removes the background image
+function bgImage() {
+    $(document.body).addClass('bg-image');
+}

@@ -117,19 +117,12 @@ $('#profile-backbtn').on('click', function() {
 $('#logoutbtn').on('click', function() {
 
     console.log('logout pressed');
-    // $('.menu-side').toggleClass('menu-side-open');
-    // $('#main-menu').toggleClass('menu-open');
-    // mainMenu.hide();
-    // profilePage.hide();
-    // hostGroupPage.hide();
-    // findGroupPage.hide();
-    // myClassesPage.hide();
 
     $('#mainApp').hide();
-
     $('#login-signup').show();
 
     userLogout();
+
 
 });
 

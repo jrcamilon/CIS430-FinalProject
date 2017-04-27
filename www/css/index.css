@@ -1,8 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 
 * {
+    font-family: 'Roboto', sans-serif;
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
+
+html, body 	{ height: 100vh; } 	/* 100% of Viewport Height 		 	*/
+
+#mainApp { height: 100vh;}
+
+.header         { height:  10vh; }  /* header gets some height   */
+#mapDiv         {  height:  60vh; }  /* map gets some height          	*/
+#liststuff      { height:  20vh;  background: white;  }
+.foot           { height: 10vh;}
 
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
@@ -13,39 +24,21 @@ body {
     margin: 0;
 }
 
-/* Portrait layout (default) */
+
 #login-page-container {
-    /*position:absolute;             !* position in the center of the screen *!*/
-    /*text-align: center;*/
-    /*align-items: center;*/
-    /*left:50%;*/
-    /*top:20%;*/
-    /*height:50px;                   !* text area height *!*/
-    /*width:225px;                   !* text area width *!*/
-    /*padding:180px 0px 0px 0px;     !* image height is 200px (bottom 20px are overlapped with text) *!*/
-    /*margin:-15px 0px 0px -112px;  !* offset vertical: half of image height and text area height *! !* offset horizontal: half of text area width *!*/
+
 }
 
 
-#login-page-container {
-    position: relative;
-    text-align: center;
-}
+#login-page-container {  position: relative;  text-align: center;  }
 
 /*Login Screen and Signup Page*/
 
-*, *:before, *:after {
-    box-sizing: border-box;
-}
+*, *:before, *:after {  box-sizing: border-box;  }
 
-html {
-    overflow-y: scroll;
-}
+html {  overflow-y: scroll;  }
 
-body {
-    background: #ffffff;
-    font-family: 'Titillium Web', sans-serif;
-}
+body {  background: #ffffff;  font-family: 'Titillium Web', sans-serif; }
 
 .form a {
     text-decoration: none;
@@ -54,9 +47,7 @@ body {
     transition: .5s ease;
 }
 
-.form a:hover {
-    color: #179b77;
-}
+.form a:hover {  color: #179b77;  }
 
 .form {
     background: rgba(19, 35, 47, 0.9);
@@ -67,16 +58,8 @@ body {
     box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
 
-.tab-group {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 40px 0;
-}
-.tab-group:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+.tab-group {  list-style: none;  padding: 0;  margin: 0 0 40px 0;  }
+.tab-group:after {  content: "";  display: table;  clear: both;  }
 .tab-group li a {
     display: block;
     text-decoration: none;
@@ -91,43 +74,19 @@ body {
     -webkit-transition: .5s ease;
     transition: .5s ease;
 }
-.tab-group li a:hover {
-    background: #179b77;
-    color: #ffffff;
+.tab-group li a:hover {  background: #179b77;  color: #ffffff;
 }
-.tab-group .active a {
-    background: #1ab188;
-    color: #ffffff;
-}
+.tab-group .active a {  background: #1ab188;  color: #ffffff;  }
 
-.tab-content > div:last-child {
-    display: none;
-}
+.tab-content > div:last-child {  display: none;  }
 
-.form h1 {
-    text-align: center;
-    color: #ffffff;
-    font-weight: 300;
-    margin: 0 0 40px;
-}
+.form h1 {  text-align: center;  color: #ffffff;  font-weight: 300; margin: 0 0 40px; }
 
-.form h2 {
-    text-align: center;
-    color: #1ab188;
-    font-weight: 100px;
-    margin: 0;
-}
+.form h2 {  text-align: center;  color: #1ab188;  font-weight: 100px;  margin: 0;  }
 
-.form span {
-    color: #1ab188;
-    font-weight: bold;
-}
+.form span { color: #1ab188; font-weight: bold;  }
 
-.form p {
-    text-align: center;
-    color: #ffffff;
-    margin: 0px 0px 50px 0px;
-}
+.form p {  text-align: center;  color: #ffffff;  margin: 0px 0px 50px 0px;  }
 
 .info {
     color: pink;
@@ -247,49 +206,39 @@ body {
 }
 
 
+
 /* End Login Screen and Sign-up Page*/
 
 /*end loading screen*/
 
-html, body 	{ height: 100vh; } 	/* 100% of Viewport Height 		 	*/
 
-#header 	{ height:  10vh; }  /* header gets some height   */
-#mapDiv 	{ height:  60vh; }  /* map gets some height          	*/
 
 .bodypage {
     height: 80vh;
 }
 
 
-#foot {
-    height: 10vh;
+/*footer stuff for all the pages*/
+
+.foot {
     background: #1ab188;
     display: flex;
     width: 100%;
+    border: red solid;
     flex-direction: row;
 }
 
-#foot {
-    height: 10vh;
-    background: #1ab188;
-    display: flex;
-    width: 100%;
-    flex-direction: row;
-}
 
-#liststuff {
-    background: white;
-    height: 20vh;
-}
 
-#foot li {
+
+.foot li {
     display: inline;
     text-align: center;
     width:100%;
 }
 
 
-#foot ul {
+.foot ul {
     align-content: center;
     margin: 0;
     padding: 0;
@@ -300,6 +249,9 @@ html, body 	{ height: 100vh; } 	/* 100% of Viewport Height 		 	*/
     width: 100%;
 
 }
+
+/*end footer stuff for all the pages*/
+
 
 .button-main-menu {
     border: 0;
@@ -325,3 +277,37 @@ html, body 	{ height: 100vh; } 	/* 100% of Viewport Height 		 	*/
     background: #179b77;
 }
 
+
+/*main menu backgroun image*/
+.bg-image {
+    background: url("https://2012books.lardbucket.org/books/a-primer-on-communication-studies/section_13/696dcdd6157d0438eed57eac9b6266b5.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+/*//for the profile pictures*/
+
+.circular--landscape {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.circular--landscape img {
+    width: auto;
+    height: 100%;
+    margin-left: -25px;
+}
+
+/*for the center icons in the header*/
+
+.centericon {
+    border: red solid;
+
+}

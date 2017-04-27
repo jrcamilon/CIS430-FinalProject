@@ -15,7 +15,7 @@
     <!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';img-src * data: 'unsafe-inline'; fmedia-src mediastream;">-->
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <link rel="stylesheet" type="text/css" href="css/menu-main.css" />
+    <!--<link rel="stylesheet" type="text/css" href="css/menu-main.css" />-->
     <link rel="stylesheet" type="text/css" href="css/slideout.css" />
     <link rel="stylesheet" href="css/images.css">
     <!--<link rel="stylesheet" type="text/css" href="css/footer.css" />-->
@@ -23,132 +23,146 @@
     <title>Hello World</title>
 </head>
 
-<body onload="initialize()"> <!-- this will can the initialize function in index.js-->
+<body onload="initialize()" class="bg-image"> <!-- this will can the initialize function in index.js-->
 
 <div class="main-container">
 
+        <div class="form" id="login-signup">
+
+            <ul class="tab-group">
+                <li class="tab active"><a href="#signup">Sign Up</a></li>
+                <li class="tab"><a href="#login">Log In</a></li>
+            </ul>
+
+            <div class="tab-content">
+
+                <div id="signup">
+
+                    <h1 id="signup-message">Sign Up for Free</h1>
+
+                    <form>
+                        <!--<form action="/" method="post">-->
+
+                        <div class="top-row">
+                            <div class="field-wrap">
+                                <label for="first-name">
+                                    First Name<span class="req">*</span>
+                                </label>
+                                <input id="first-name" name="first-name" type="text" required autocomplete="off"/>
+                            </div>
+
+                            <div class="field-wrap">
+                                <label for="last-name">
+                                    Last Name<span class="req">*</span>
+                                </label>
+                                <input id="last-name" name="last-name" type="text" required autocomplete="off"/>
+                            </div>
+                        </div>
+
+                        <div class="field-wrap">
+                            <label for="email">
+                                Email Address<span class="req">*</span>
+                            </label>
+                            <input id="email" name="email" type="email" required autocomplete="off"/>
+                        </div>
+
+                        <div class="field-wrap">
+                            <label for="password">
+                                Set A Password<span class="req">*</span>
+                            </label>
+                            <input id="password" name="password" type="password" required autocomplete="off"/>
+                        </div>
+
+                        <button type="button" class="button button-block" onclick="createAccountClick(this.form)">Get Started</button>
+
+                    </form>
+
+                </div>
+
+                <div id="login">
+                    <h1 id="login-welcome">Welcome</h1>
+
+                    <form>
+
+                        <div class="field-wrap">
+                            <label for="login-email">
+                                Email Address<span class="req">*</span>
+                            </label>
+                            <input id="login-email" name="login-email" type="email" required autocomplete="off"/>
+                        </div>
+
+                        <div class="field-wrap">
+                            <label for="login-password">
+                                Password<span class="req">*</span>
+                            </label>
+                            <input id="login-password" name="login-password" type="password" required autocomplete="off"/>
+                        </div>
+
+                        <p class="forgot"><a href="#">Forgot Password?</a></p>
+
+                        <button type="button" class="button button-block" onclick="loginButtonClick(this.form)">Log In</button>
+
+                    </form>
+
+
+                </div>
+
+
+            </div><!-- tab-content -->
+
+        </div> <!-- form-content -->
+
     <!--this div contains the form for login and signup-->
-    <div class="form" id="login-signup">
-
-        <ul class="tab-group">
-            <li class="tab active"><a href="#signup">Sign Up</a></li>
-            <li class="tab"><a href="#login">Log In</a></li>
-        </ul>
-
-        <div class="tab-content">
-
-            <div id="signup">
-
-                <h1 id="signup-message">Sign Up for Free</h1>
-
-                <form>
-                    <!--<form action="/" method="post">-->
-
-                    <div class="top-row">
-                        <div class="field-wrap">
-                            <label for="first-name">
-                                First Name<span class="req">*</span>
-                            </label>
-                            <input id="first-name" name="first-name" type="text" required autocomplete="off"/>
-                        </div>
-
-                        <div class="field-wrap">
-                            <label for="last-name">
-                                Last Name<span class="req">*</span>
-                            </label>
-                            <input id="last-name" name="last-name" type="text" required autocomplete="off"/>
-                        </div>
-                    </div>
-
-                    <div class="field-wrap">
-                        <label for="email">
-                            Email Address<span class="req">*</span>
-                        </label>
-                        <input id="email" name="email" type="email" required autocomplete="off"/>
-                    </div>
-
-                    <div class="field-wrap">
-                        <label for="password">
-                            Set A Password<span class="req">*</span>
-                        </label>
-                        <input id="password" name="password" type="password" required autocomplete="off"/>
-                    </div>
-
-                    <button type="button" class="button button-block" onclick="createAccountClick(this.form)">Get Started</button>
-
-                </form>
-
-            </div>
-
-            <div id="login">
-                <h1 id="login-welcome">Welcome</h1>
-
-                <form>
-
-                    <div class="field-wrap">
-                        <label for="login-email">
-                            Email Address<span class="req">*</span>
-                        </label>
-                        <input id="login-email" name="login-email" type="email" required autocomplete="off"/>
-                    </div>
-
-                    <div class="field-wrap">
-                        <label for="login-password">
-                            Password<span class="req">*</span>
-                        </label>
-                        <input id="login-password" name="login-password" type="password" required autocomplete="off"/>
-                    </div>
-
-                    <p class="forgot"><a href="#">Forgot Password?</a></p>
-
-                    <button type="button" class="button button-block" onclick="loginButtonClick(this.form)">Log In</button>
-
-                </form>
-
-
-            </div>
-
-
-        </div><!-- tab-content -->
-
-    </div> <!-- form-content -->
 
     <!--This div contains the rest of the application-->
-    <div id="mainApp">
+    <div id="mainApp" class="inactive">
 
         <!--slider menu-->
         <div id="slide-menu" class="menu-side active">
 
-            <div>
-                <img id="profilePicture" src="" alt="">
-
-                <p id="sessionUser">Not Logged In</p>
+            <div class="slide-menu-header">
+                <img id="profilePicture" width="100px" height="100px" src="img/profile-image.svg" alt="" class="circular--landscape">
+                <p id="sessionUser">NOT LOGGED IN</p>
 
             </div>
 
             <div class="slidemenuelements">
-
                 <ul>
-                    <li id="slidemenu-profile">Profile</li>
-                    <li id="slidemenu-myclasses">My Classes</li>
+                    <li id="slidemenu-profile"><img src="icons/profile.svg" width="35px" alt="">
+                        PROFILE</li>
+                    <li id="slidemenu-myclasses"><img src="icons/classes.svg" width="35px" alt="">
+                        CLASSES</li>
+                    <li><img src="icons/messages.svg" width="40px" alt="">
+                        MESSAGES</li>
+                    <li><img src="icons/friends.svg" width="40px" alt="">
+                        FRIENDS</li>
+                    <li></li>
+                    <li id="slide-settings" class="sep"><img src="icons/settings.svg" width="35px" alt="">
+                        SETTINGS</li>
+                    <li id="logoutbtn" onclick="bgImage()"><img src="icons/logout.svg" width="35px" alt="">
+                        LOGOUT</li>
+                    <li></li>
+
                 </ul>
 
             </div>
 
             <!--logout button pressed from the slider menu-->
-            <div class="slide-menu-footer">
-                <p id="logoutbtn">LOGOUT</p>
-            </div>
+            <!--<div class="slide-menu-footer">-->
+                <!--<p id="slide-settings">SETTINGS</p>-->
+                <!--<p id="logoutbtn">LOGOUT</p>-->
+            <!--</div>-->
 
 
 
-        </div>
+        </div> <!-- end slider menu-->
 
+        <!--main menu with the map, aka home screen-->
         <div id="main-menu" class="tabItem active homemenu">
 
             <!--this is the main app header-->
-            <div id="header" class="headericon">
-                <img id="menuicon" src="img/back.svg" class="backicon" alt="">
+            <div id="header-home" class="headericon header">
+                <img id="menuicon" src="img/menu.svg" class="backicon" alt="">
                 <img src="img/top-header-logo.svg" class="centericon">
             </div>
 
@@ -156,14 +170,14 @@
 
                 <!--<!- <div class="map" id="mapDiv"></div>- this div is where the google map will go &ndash;&gt;-->
                 <div class="map" id="mapDiv"></div>
-                <div id="liststuff"><h1></h1></div>
+                <div id="liststuff"></div>
 
             </div>
 
 
 
             <!--This is the footer menu with the two buttons-->
-            <div id="foot" class="foot">
+            <div id="foot-mainmenu" class="foot">
                 <ul>
                     <li><button id="host-group-button" class="tabLink button-main-menu">HOST GROUP</button></li>
                     <li><button id="find-group-button" class="tabLink button-main-menu">FIND GROUP</button></li>
@@ -174,10 +188,10 @@
         </div> <!-- end main-menu -->
 
         <!--host group-->
-        <div id="page1" class="inactive">
+        <div id="page1" class="inactive header">
 
-            <div id="header" class="headericon">
-                <img id="hostGroupPage-backBtn" src="img/back.svg" class="backicon" alt="">
+            <div id="header-host" class="headericon header">
+                <img id="hostGroupPage-backBtn" src="img/back-icon.svg" class="backicon" alt="">
                 <img id="host-logo" class="centericon" src="img/group-icon.svg" alt="">
             </div>
 
@@ -198,7 +212,7 @@
             </div>
 
 
-            <div id="foot" class="foot">
+            <div id="foot-page1" class="foot">
                 <ul>
                     <li><button id="page1-clearbtn" class="tabLink button-main-menu">CLEAR</button></li>
                     <li><button id="page1-donebtn" class="tabLink button-main-menu">DONE</button></li>
@@ -212,8 +226,8 @@
         <!--find group-->
         <div id="page2" class="inactive">
 
-            <div id="header" class="headericon">
-                <img id="findGroupPage-backBtn" src="img/back.svg" class="backicon" alt="">
+            <div id="header-findgroup" class="headericon header">
+                <img id="findGroupPage-backBtn" src="img/back-icon.svg" class="backicon" alt="">
                 <img src="img/find-icon.svg" alt="" class="centericon">
             </div>
 
@@ -235,7 +249,7 @@
             </div>
 
 
-            <div id="foot" class="foot">
+            <div id="foot-page2" class="foot">
                 <ul>
                     <li><button id="page2-clearbtn" class="tabLink button-main-menu">CLEAR</button></li>
                     <li><button id="page2-donebtn" class="tabLink button-main-menu">SEARCH</button></li>
@@ -246,10 +260,11 @@
 
         </div>
 
+        <!--profile page-->
         <div id="profile" class="inactive">
 
-            <div id="header" class="headericon">
-                <img id="profile-backbtn" src="img/back.svg" class="backicon" alt="">
+            <div id="header-profile" class="headericon header">
+                <img id="profile-backbtn" src="img/back-icon.svg" class="backicon" alt="">
                 <img src="img/find-icon.svg" alt="" class="centericon">
             </div>
 
@@ -271,7 +286,7 @@
             </div>
 
 
-            <div id="foot" class="foot">
+            <div id="foot-profile" class="foot">
                 <ul>
                     <li><button id="page3-clearbtn" class="tabLink button-main-menu">CLEAR</button></li>
                     <li><button id="page3-donebtn" class="tabLink button-main-menu">SEARCH</button></li>
@@ -282,10 +297,11 @@
 
         </div>
 
+        <!--my classes page-->
         <div id="myclasses" class="inactive">
 
-            <div id="header" class="headericon">
-                <img id="myclasses-backbtn" src="img/back.svg" class="backicon" alt="">
+            <div id="header-myclasses" class="headericon header">
+                <img id="myclasses-backbtn" src="img/menu.svg" class="backicon" alt="">
                 <img src="img/find-icon.svg" alt="" class="centericon">
             </div>
 
@@ -307,7 +323,7 @@
             </div>
 
 
-            <div id="foot" class="foot">
+            <div id="foot-myclasses" class="foot">
                 <ul>
                     <li><button id="page4-clearbtn" class="tabLink button-main-menu">CLEAR</button></li>
                     <li><button id="page4-donebtn" class="tabLink button-main-menu">SEARCH</button></li>
