@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b42b4517-601d-4591-a3c0-6bd7afb478c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/eventHandlers.js" afterPath="$PROJECT_DIR$/www/js/eventHandlers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index.js" afterPath="$PROJECT_DIR$/www/js/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/slideout.css" afterPath="$PROJECT_DIR$/www/css/slideout.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,8 +26,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/www/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="161" column="0" lean-forward="true" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+                <state relative-caret-position="152">
+                  <caret line="116" column="55" lean-forward="true" selection-start-line="116" selection-start-column="55" selection-end-line="116" selection-end-column="55" />
                   <folding>
                     <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                     <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -108,7 +107,7 @@
           <file leaf-file-name="images.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/www/css/images.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1155">
+                <state relative-caret-position="942">
                   <caret line="77" column="30" lean-forward="false" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="30" />
                   <folding />
                 </state>
@@ -125,10 +124,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/www/js/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3017">
+                <state relative-caret-position="3253">
                   <caret line="400" column="40" lean-forward="false" selection-start-line="400" selection-start-column="39" selection-end-line="400" selection-end-column="40" />
                   <folding>
                     <element signature="n#!!block;n#checkEnteredEmail#0" expanded="false" />
@@ -149,11 +148,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="slideout.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="slideout.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/www/css/slideout.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="17" column="54" lean-forward="false" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="54" />
+                <state relative-caret-position="386">
+                  <caret line="108" column="27" lean-forward="false" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -233,11 +232,11 @@
         <option value="$PROJECT_DIR$/www/cordova.js" />
         <option value="$PROJECT_DIR$/www/js/menu-main.js" />
         <option value="$PROJECT_DIR$/www/js/jQuery.js" />
-        <option value="$PROJECT_DIR$/www/css/slideout.css" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/css/index.css" />
         <option value="$PROJECT_DIR$/www/js/eventHandlers.js" />
         <option value="$PROJECT_DIR$/www/js/index.js" />
+        <option value="$PROJECT_DIR$/www/css/slideout.css" />
       </list>
     </option>
   </component>
@@ -527,12 +526,12 @@
       <workItem from="1493010911970" duration="1399000" />
       <workItem from="1493152483433" duration="3177000" />
       <workItem from="1493228836983" duration="26102000" />
-      <workItem from="1493314117650" duration="5674000" />
+      <workItem from="1493314117650" duration="6248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161919000" />
+    <option name="totallyTimeSpent" value="162493000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="1024" extended-state="0" />
@@ -933,22 +932,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/images.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="77" column="30" lean-forward="false" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/slideout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="54" lean-forward="false" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/menu-main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -997,7 +980,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3017">
+        <state relative-caret-position="3253">
           <caret line="400" column="40" lean-forward="false" selection-start-line="400" selection-start-column="39" selection-end-line="400" selection-end-column="40" />
           <folding>
             <element signature="n#!!block;n#checkEnteredEmail#0" expanded="false" />
@@ -1017,10 +1000,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/images.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="942">
+          <caret line="77" column="30" lean-forward="false" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/slideout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="108" column="27" lean-forward="false" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="161" column="0" lean-forward="true" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
+        <state relative-caret-position="152">
+          <caret line="116" column="55" lean-forward="true" selection-start-line="116" selection-start-column="55" selection-end-line="116" selection-end-column="55" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />

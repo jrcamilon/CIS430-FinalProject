@@ -106,7 +106,7 @@
     }
 
     #slide-menu ul {
-        padding: 3% 3% 3% 3%;
+        padding: 2% 2% 2% 2%;
 
 
     }
@@ -114,8 +114,8 @@
     .slidemenuelements li {
 
         list-style: none;
-        padding-top: 5%;
-        padding-bottom: 5%;
+        padding-top: 2%;
+        padding-bottom: 2%;
 
         margin-bottom: 1%;
         justify-content: space-around;
@@ -131,7 +131,7 @@
 
 
     .slidemenuelements li:hover {
-        background-color: rgba(128,128,128,0.);
+        background-color: rgba(128,128,128,0.25);
         border-radius: 7px;
     }
 
