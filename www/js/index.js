@@ -3,23 +3,25 @@
 "use strict";
 
 //Global Variables
+//DB Variables
 var dbHost          = "dmazzola.com";
 var dbLogin         = "ecamilon";
 var dbLoginPass     = "ecam5470";
 var dbName          = "test_db_ecamilon";
 
+//create account variables
 var firstName       = undefined;
 var lastName        = undefined;
 var email           = undefined;
 var password        = undefined;
 
-
+//login variables
 var loginEmail      = undefined;
 var loginPassword   = undefined;
-
 var returnedPassword= undefined;
 var enteredPassword = undefined;
 
+//map variables
 var mapGeoButton 	= undefined;
 var currentLat      = undefined;
 var currentLong     = undefined;
@@ -33,6 +35,7 @@ var zoom 			= 18;
 var markerOptions   = undefined;
 
 
+//Profile Session Variables
 var curSessionUser  = undefined; //this is the current session user e.g. Tony Stark;
 var crSessionEmail  = undefined; // this is the current session user's email e.g. logged in as: ts@asu.ed
 var crSessionPassword = undefined; // this is the current session user's password.
@@ -53,6 +56,7 @@ var testOBJ2 = {
     long: 33.263169,
     lat: -111.789871
 };
+
 
 var arr = [testOBJ, testOBJ2];
 
@@ -81,15 +85,18 @@ function insertHostToDB() {
 
     executeSQLStatement(sqlStatement, 'insert');
 
-    //prompt user that you have now created a session to host
+    //prompt user that you have now created a session to host, output to the #liststuff div
+
 
 }
 
-function getHostClassesFromDB() {
+function getAllHostClassesFromDB() {
 
     // button pressed load the classes
     // query to load ALL the classes
     // process query results, post all the classes to the map.
+
+    var statementBegin = ""
 
 }
 
@@ -284,6 +291,7 @@ function loadMainMenu(){
     $('.form').hide();           //hide the login and signup form
     $('#mainApp').show();       //show the main app with all divs
     $('body').toggleClass('bg-image');
+    $('slide-menu').removeClass('active');
     console.log('toggled');
 
     generateSessionUserInfo();   //get the user info and save them to a variable
@@ -378,9 +386,6 @@ function mapGeolocation() {
     newMarker(curLatLng);
 }
 
-
-
-
 function newMarker(curLatLng) {
 
         var map;
@@ -393,7 +398,7 @@ function newMarker(curLatLng) {
 
         // Multiple Markers
         var markers = [ ['ASU, Tempe', 33.424564, -111.928001],
-                        ['Corner, Location', arr[0].long, arr[0].lat],
+                        ['CIS430', arr[0].long, arr[0].lat],
                         ['Your Location', currentLat,currentLong]
         ];
         //load markers

@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b42b4517-601d-4591-a3c0-6bd7afb478c7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/icons/classes.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/icons/friends.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/icons/logout.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/icons/messages.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/icons/profile.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/icons/settings.svg" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/www/img/back.svg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/index.css" afterPath="$PROJECT_DIR$/www/css/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/slideout.css" afterPath="$PROJECT_DIR$/www/css/slideout.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/eventHandlers.js" afterPath="$PROJECT_DIR$/www/js/eventHandlers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/index.js" afterPath="$PROJECT_DIR$/www/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/jQuery.js" afterPath="$PROJECT_DIR$/www/js/jQuery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/menu-main.js" afterPath="$PROJECT_DIR$/www/js/menu-main.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,14 +21,14 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.15303244">
+    <splitter split-orientation="horizontal" split-proportion="0.42736247">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/www/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-193">
-                  <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+                <state relative-caret-position="272">
+                  <caret line="161" column="0" lean-forward="true" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
                   <folding>
                     <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                     <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -76,7 +64,7 @@
           <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/www/css/index.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="4425">
+                <state relative-caret-position="559">
                   <caret line="295" column="17" lean-forward="false" selection-start-line="295" selection-start-column="17" selection-end-line="295" selection-end-column="17" />
                   <folding />
                 </state>
@@ -86,8 +74,8 @@
           <file leaf-file-name="eventHandlers.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/www/js/eventHandlers.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="780">
-                  <caret line="121" column="30" lean-forward="false" selection-start-line="121" selection-start-column="30" selection-end-line="121" selection-end-column="30" />
+                <state relative-caret-position="663">
+                  <caret line="121" column="13" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="13" />
                   <folding>
                     <element signature="e#365#478#0" expanded="false" />
                     <element signature="e#533#622#0" expanded="false" />
@@ -140,16 +128,22 @@
           <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/www/js/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2471">
-                  <caret line="487" column="69" lean-forward="false" selection-start-line="487" selection-start-column="69" selection-end-line="487" selection-end-column="69" />
+                <state relative-caret-position="3017">
+                  <caret line="400" column="40" lean-forward="false" selection-start-line="400" selection-start-column="39" selection-end-line="400" selection-end-column="40" />
                   <folding>
-                    <element signature="n#!!block;n#insertHostToDB#0" expanded="false" />
                     <element signature="n#!!block;n#checkEnteredEmail#0" expanded="false" />
-                    <element signature="n#!!block;n#loginButtonClick#0" expanded="false" />
-                    <element signature="n#!!block;n#loadMainMenu#0" expanded="false" />
+                    <element signature="n#!!block;n#executeSQLStatement#0" expanded="false" />
+                    <element signature="n#!!block;n#processQueryResult#0" expanded="false" />
                     <element signature="n#!!block;n#grabCurrentUserInformation#0" expanded="false" />
                     <element signature="n#!!block;n#checkpassword#0" expanded="false" />
+                    <element signature="n#!!block;n#loadScript#0" expanded="false" />
+                    <element signature="n#!!block;n#initMap#0" expanded="false" />
+                    <element signature="n#!!block;n#geolocationSuccess#0" expanded="false" />
                     <element signature="n#!!block;n#geolocationError#0" expanded="false" />
+                    <element signature="n#!!block;n#mapGeolocation#0" expanded="false" />
+                    <element signature="n#!!block;n#generateSessionUserInfo#0" expanded="false" />
+                    <element signature="n#!!block;n#loadProfilePic#0" expanded="false" />
+                    <element signature="n#!!block;n#userLogout#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -179,7 +173,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>label</find>
       <find>insert</find>
       <find>executeSQLStatement</find>
       <find>get</find>
@@ -209,6 +202,7 @@
       <find>flex</find>
       <find>.center</find>
       <find>welcome</find>
+      <find>login</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -238,11 +232,11 @@
         <option value="$PROJECT_DIR$/www/css/images.css" />
         <option value="$PROJECT_DIR$/www/cordova.js" />
         <option value="$PROJECT_DIR$/www/js/menu-main.js" />
-        <option value="$PROJECT_DIR$/www/js/eventHandlers.js" />
         <option value="$PROJECT_DIR$/www/js/jQuery.js" />
         <option value="$PROJECT_DIR$/www/css/slideout.css" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/css/index.css" />
+        <option value="$PROJECT_DIR$/www/js/eventHandlers.js" />
         <option value="$PROJECT_DIR$/www/js/index.js" />
       </list>
     </option>
@@ -533,12 +527,12 @@
       <workItem from="1493010911970" duration="1399000" />
       <workItem from="1493152483433" duration="3177000" />
       <workItem from="1493228836983" duration="26102000" />
-      <workItem from="1493314117650" duration="3529000" />
+      <workItem from="1493314117650" duration="5674000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159774000" />
+    <option name="totallyTimeSpent" value="161919000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="1024" extended-state="0" />
@@ -582,13 +576,19 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#insertHostToDB#0" expanded="false" />
             <element signature="n#!!block;n#checkEnteredEmail#0" expanded="false" />
-            <element signature="n#!!block;n#loginButtonClick#0" expanded="false" />
-            <element signature="n#!!block;n#loadMainMenu#0" expanded="false" />
+            <element signature="n#!!block;n#executeSQLStatement#0" expanded="false" />
+            <element signature="n#!!block;n#processQueryResult#0" expanded="false" />
             <element signature="n#!!block;n#grabCurrentUserInformation#0" expanded="false" />
             <element signature="n#!!block;n#checkpassword#0" expanded="false" />
+            <element signature="n#!!block;n#loadScript#0" expanded="false" />
+            <element signature="n#!!block;n#initMap#0" expanded="false" />
+            <element signature="n#!!block;n#geolocationSuccess#0" expanded="false" />
             <element signature="n#!!block;n#geolocationError#0" expanded="false" />
+            <element signature="n#!!block;n#mapGeolocation#0" expanded="false" />
+            <element signature="n#!!block;n#generateSessionUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#loadProfilePic#0" expanded="false" />
+            <element signature="n#!!block;n#userLogout#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -598,13 +598,19 @@
         <state relative-caret-position="495">
           <caret line="78" column="0" lean-forward="true" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#insertHostToDB#0" expanded="false" />
             <element signature="n#!!block;n#checkEnteredEmail#0" expanded="false" />
-            <element signature="n#!!block;n#loginButtonClick#0" expanded="false" />
-            <element signature="n#!!block;n#loadMainMenu#0" expanded="false" />
+            <element signature="n#!!block;n#executeSQLStatement#0" expanded="false" />
+            <element signature="n#!!block;n#processQueryResult#0" expanded="false" />
             <element signature="n#!!block;n#grabCurrentUserInformation#0" expanded="false" />
             <element signature="n#!!block;n#checkpassword#0" expanded="false" />
+            <element signature="n#!!block;n#loadScript#0" expanded="false" />
+            <element signature="n#!!block;n#initMap#0" expanded="false" />
+            <element signature="n#!!block;n#geolocationSuccess#0" expanded="false" />
             <element signature="n#!!block;n#geolocationError#0" expanded="false" />
+            <element signature="n#!!block;n#mapGeolocation#0" expanded="false" />
+            <element signature="n#!!block;n#generateSessionUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#loadProfilePic#0" expanded="false" />
+            <element signature="n#!!block;n#userLogout#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -635,13 +641,19 @@
         <state relative-caret-position="1290">
           <caret line="103" column="9" lean-forward="true" selection-start-line="103" selection-start-column="9" selection-end-line="103" selection-end-column="9" />
           <folding>
-            <element signature="n#!!block;n#insertHostToDB#0" expanded="false" />
             <element signature="n#!!block;n#checkEnteredEmail#0" expanded="false" />
-            <element signature="n#!!block;n#loginButtonClick#0" expanded="false" />
-            <element signature="n#!!block;n#loadMainMenu#0" expanded="false" />
+            <element signature="n#!!block;n#executeSQLStatement#0" expanded="false" />
+            <element signature="n#!!block;n#processQueryResult#0" expanded="false" />
             <element signature="n#!!block;n#grabCurrentUserInformation#0" expanded="false" />
             <element signature="n#!!block;n#checkpassword#0" expanded="false" />
+            <element signature="n#!!block;n#loadScript#0" expanded="false" />
+            <element signature="n#!!block;n#initMap#0" expanded="false" />
+            <element signature="n#!!block;n#geolocationSuccess#0" expanded="false" />
             <element signature="n#!!block;n#geolocationError#0" expanded="false" />
+            <element signature="n#!!block;n#mapGeolocation#0" expanded="false" />
+            <element signature="n#!!block;n#generateSessionUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#loadProfilePic#0" expanded="false" />
+            <element signature="n#!!block;n#userLogout#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -679,13 +691,19 @@
         <state relative-caret-position="1410">
           <caret line="109" column="2" lean-forward="true" selection-start-line="109" selection-start-column="2" selection-end-line="109" selection-end-column="2" />
           <folding>
-            <element signature="n#!!block;n#insertHostToDB#0" expanded="false" />
             <element signature="n#!!block;n#checkEnteredEmail#0" expanded="false" />
-            <element signature="n#!!block;n#loginButtonClick#0" expanded="false" />
-            <element signature="n#!!block;n#loadMainMenu#0" expanded="false" />
+            <element signature="n#!!block;n#executeSQLStatement#0" expanded="false" />
+            <element signature="n#!!block;n#processQueryResult#0" expanded="false" />
             <element signature="n#!!block;n#grabCurrentUserInformation#0" expanded="false" />
             <element signature="n#!!block;n#checkpassword#0" expanded="false" />
+            <element signature="n#!!block;n#loadScript#0" expanded="false" />
+            <element signature="n#!!block;n#initMap#0" expanded="false" />
+            <element signature="n#!!block;n#geolocationSuccess#0" expanded="false" />
             <element signature="n#!!block;n#geolocationError#0" expanded="false" />
+            <element signature="n#!!block;n#mapGeolocation#0" expanded="false" />
+            <element signature="n#!!block;n#generateSessionUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#loadProfilePic#0" expanded="false" />
+            <element signature="n#!!block;n#userLogout#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -723,13 +741,19 @@
         <state relative-caret-position="165">
           <caret line="11" column="61" lean-forward="false" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
           <folding>
-            <element signature="n#!!block;n#insertHostToDB#0" expanded="false" />
             <element signature="n#!!block;n#checkEnteredEmail#0" expanded="false" />
-            <element signature="n#!!block;n#loginButtonClick#0" expanded="false" />
-            <element signature="n#!!block;n#loadMainMenu#0" expanded="false" />
+            <element signature="n#!!block;n#executeSQLStatement#0" expanded="false" />
+            <element signature="n#!!block;n#processQueryResult#0" expanded="false" />
             <element signature="n#!!block;n#grabCurrentUserInformation#0" expanded="false" />
             <element signature="n#!!block;n#checkpassword#0" expanded="false" />
+            <element signature="n#!!block;n#loadScript#0" expanded="false" />
+            <element signature="n#!!block;n#initMap#0" expanded="false" />
+            <element signature="n#!!block;n#geolocationSuccess#0" expanded="false" />
             <element signature="n#!!block;n#geolocationError#0" expanded="false" />
+            <element signature="n#!!block;n#mapGeolocation#0" expanded="false" />
+            <element signature="n#!!block;n#generateSessionUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#loadProfilePic#0" expanded="false" />
+            <element signature="n#!!block;n#userLogout#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -909,10 +933,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/images.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="77" column="30" lean-forward="false" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/slideout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="54" lean-forward="false" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/menu-main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/jQuery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/eventHandlers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="121" column="30" lean-forward="false" selection-start-line="121" selection-start-column="30" selection-end-line="121" selection-end-column="30" />
+        <state relative-caret-position="663">
+          <caret line="121" column="13" lean-forward="false" selection-start-line="121" selection-start-column="8" selection-end-line="121" selection-end-column="13" />
           <folding>
             <element signature="e#365#478#0" expanded="false" />
             <element signature="e#533#622#0" expanded="false" />
@@ -929,52 +987,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/menu-main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/images.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1155">
-          <caret line="77" column="30" lean-forward="false" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/jQuery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4425">
+        <state relative-caret-position="559">
           <caret line="295" column="17" lean-forward="false" selection-start-line="295" selection-start-column="17" selection-end-line="295" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/slideout.css">
+    <entry file="file://$PROJECT_DIR$/www/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="54" lean-forward="false" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="54" />
-          <folding />
+        <state relative-caret-position="3017">
+          <caret line="400" column="40" lean-forward="false" selection-start-line="400" selection-start-column="39" selection-end-line="400" selection-end-column="40" />
+          <folding>
+            <element signature="n#!!block;n#checkEnteredEmail#0" expanded="false" />
+            <element signature="n#!!block;n#executeSQLStatement#0" expanded="false" />
+            <element signature="n#!!block;n#processQueryResult#0" expanded="false" />
+            <element signature="n#!!block;n#grabCurrentUserInformation#0" expanded="false" />
+            <element signature="n#!!block;n#checkpassword#0" expanded="false" />
+            <element signature="n#!!block;n#loadScript#0" expanded="false" />
+            <element signature="n#!!block;n#initMap#0" expanded="false" />
+            <element signature="n#!!block;n#geolocationSuccess#0" expanded="false" />
+            <element signature="n#!!block;n#geolocationError#0" expanded="false" />
+            <element signature="n#!!block;n#mapGeolocation#0" expanded="false" />
+            <element signature="n#!!block;n#generateSessionUserInfo#0" expanded="false" />
+            <element signature="n#!!block;n#loadProfilePic#0" expanded="false" />
+            <element signature="n#!!block;n#userLogout#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-193">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        <state relative-caret-position="272">
+          <caret line="161" column="0" lean-forward="true" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -988,22 +1034,6 @@
             <element signature="n#style#0;n#p#0;n#div#1;n#div#4;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#p#0;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2471">
-          <caret line="487" column="69" lean-forward="false" selection-start-line="487" selection-start-column="69" selection-end-line="487" selection-end-column="69" />
-          <folding>
-            <element signature="n#!!block;n#insertHostToDB#0" expanded="false" />
-            <element signature="n#!!block;n#checkEnteredEmail#0" expanded="false" />
-            <element signature="n#!!block;n#loginButtonClick#0" expanded="false" />
-            <element signature="n#!!block;n#loadMainMenu#0" expanded="false" />
-            <element signature="n#!!block;n#grabCurrentUserInformation#0" expanded="false" />
-            <element signature="n#!!block;n#checkpassword#0" expanded="false" />
-            <element signature="n#!!block;n#geolocationError#0" expanded="false" />
           </folding>
         </state>
       </provider>

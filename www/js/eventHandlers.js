@@ -120,6 +120,7 @@ $('#logoutbtn').on('click', function() {
 
     $('#mainApp').hide();
     $('#login-signup').show();
+    $('#slide-menu').toggleClass('active');
 
     userLogout();
 
