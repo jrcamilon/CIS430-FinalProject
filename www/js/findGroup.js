@@ -1,3 +1,9 @@
+var hostId;
+var classId;
+
+
+
+
 function searchClassFunction() {
   var input, filter, table, tr, td, i;
   input = document.getElementById("myInput");
@@ -5,7 +11,7 @@ function searchClassFunction() {
   table = document.getElementById("queryOutput");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
+    td = tr[i].getElementsByTagName("td")[1];
     if (td) {
       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
         tr[i].style.display = "";
@@ -18,7 +24,7 @@ function searchClassFunction() {
 
 function showClassClick(){
 
-    var sqlStatement = "SELECT className, description, time, location FROM class ORDER BY CLASSNAME ASC;";
+    var sqlStatement = "SELECT classId, className, description, time, hostId, location FROM class ORDER BY CLASSNAME ASC;";
     executeSQLStatement3(sqlStatement);
 }
 
@@ -75,8 +81,19 @@ function processQueryResult3(queryReturned) {
 
             buttonVar.addEventListener('click', function(){
                 console.log(this.parentNode.cells[0].innerHTML);
-                console.log(this.parentNode.cells[1].innerHTML);
+                console.log(this.parentNode.cells[4].innerHTML);
+                classId = this.parentNode.cells[0].innerHTML;
+                hostId = this.parentNode.cells[4].innerHTML;
 
+                var statementBegin = "INSERT INTO myClass (userId, classId) VALUES(";
+                var            com = ",";
+                var           char = "'";
+                var   statementEnd = ");";
+                var   sqlStatement = statementBegin.concat(char,
+                    hostId,char,com,char,
+                    classId,char,statementEnd);
+
+                executeSQLStatement101(sqlStatement, 'insert');
             })
 
             tableRow.appendChild(buttonVar);
@@ -85,9 +102,60 @@ function processQueryResult3(queryReturned) {
 
         table.appendChild(tableBody);
         queryOut.appendChild(table);
-
-        
-
         
     }
 }
+
+
+
+function executeSQLStatement101(sqlStatement, sqlStatementType){
+
+    console.log('executing SQL statement.. connecting to DB');
+    MySql.Execute(
+        dbHost,
+        dbLogin,
+        dbLoginPass,
+        dbName,
+        sqlStatement,
+        function (data) {
+
+            if(sqlStatementType == 'insert'){
+                console.log(data);
+                console.log('insert complete');
+
+            } else if (sqlStatementType == 'select'){
+                processQueryResult(data);
+                console.log('select statement complete, success! returned JSON objects')
+            }
+
+        });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
