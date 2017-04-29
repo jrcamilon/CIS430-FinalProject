@@ -92,6 +92,7 @@ function processQueryResult3(queryReturned) {
                 var   sqlStatement = statementBegin.concat(char,
                     hostId,char,com,char,
                     classId,char,statementEnd);
+                
 
                 executeSQLStatement101(sqlStatement, 'insert');
             })
@@ -120,7 +121,7 @@ function executeSQLStatement101(sqlStatement, sqlStatementType){
         function (data) {
 
             if(sqlStatementType == 'insert'){
-                console.log(data);
+                //console.log(data);
                 console.log('insert complete');
 
             } else if (sqlStatementType == 'select'){
