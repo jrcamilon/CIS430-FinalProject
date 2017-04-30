@@ -119,8 +119,20 @@ $('#logoutbtn').on('click', function() {
     console.log('logout pressed');
 
     $('#mainApp').hide();
+
+
+    //menu-open
+    //menu-side-open
+    $('#main-menu').removeClass('menu-open');
+    $('#slide-menu').removeClass('menu-side-open');
+
+
+
     $('#login-signup').show();
-    $('#slide-menu').toggleClass('active');
+
+
+
+
 
     userLogout();
 

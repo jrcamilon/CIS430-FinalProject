@@ -224,7 +224,7 @@ body {  background: #ffffff;  font-family: 'Titillium Web', sans-serif; }
     background: #1ab188;
     display: flex;
     width: 100%;
-    border: red solid;
+    /*border: red solid;*/
     flex-direction: row;
 }
 
