@@ -40,25 +40,31 @@ var curSessionUser  = undefined; //this is the current session user e.g. Tony St
 var crSessionEmail  = undefined; // this is the current session user's email e.g. logged in as: ts@asu.ed
 var crSessionPassword = undefined; // this is the current session user's password.
 
-//test code
-var testOBJ = {
-    class: "CIS430",
-    host: "Tony Stark",
-    description: "none",
-    long: 33.277342,
-    lat: -111.789769
-};
-
-var testOBJ2 = {
-    class: "ACC444",
-    host: "Bruce Banner",
-    description: "none",
-    long: 33.263169,
-    lat: -111.789871
-};
 
 
-var arr = [testOBJ, testOBJ2];
+//
+// //test code
+// var testOBJ = {
+//     class: "CIS430",
+//     host: "Tony Stark",
+//     description: "none",
+//     long: 33.277342,
+//     lat: -111.789769
+// };
+//
+// var testOBJ2 = {
+//     class: "ACC444",
+//     host: "Bruce Banner",
+//     description: "none",
+//     long: 33.263169,
+//     lat: -111.789871
+// };
+//
+//
+//
+//
+//
+// var arr = [testOBJ, testOBJ2];
 
 function insertHostToDB() {
 
@@ -90,20 +96,6 @@ function insertHostToDB() {
 
 }
 
-function getAllHostClassesFromDB() {
-
-    // button pressed load the classes
-    // query to load ALL the classes
-    // process query results, post all the classes to the map.
-
-    var statementBegin = ""
-
-}
-
-function generateClassLocations() {
-
-}
-//end test code
 
 
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -111,17 +103,20 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
     // alert("onDeviceReady() executed");
 }
+
 function initialize() {
 
     //hide everything but the login form div and initialize the map
+    // $('.form').hide();
     $('#mainApp').hide();
+    // $(document.body).removeClass('bg-image');
 
     // loadScript('initMap');
 
     mapElement 	   = document.getElementById('mapDiv');
     // statusBarHide();
 }
-//cordova made finction to hide the status bar for both ios and android mobile phones.
+//cordova made function to hide the status bar for both ios and android mobile phones.
 function statusBarHide(){
 
     //This removes the status bar for android
@@ -221,11 +216,11 @@ function executeSQLStatement(sqlStatement, sqlStatementType){
         sqlStatement,
         function (data) {
 
-            if(sqlStatementType == 'insert'){
+            if(sqlStatementType === 'insert'){
                 console.log(data);
                 console.log('insert complete');
 
-            } else if (sqlStatementType == 'select'){
+            } else if (sqlStatementType === 'select'){
                 processQueryResult(data);
                 console.log('select statement complete, success! returned JSON objects')
             }
@@ -335,6 +330,14 @@ function loadScript(callback) {
 
 function initMap() {
 
+    var image = {
+        url: 'http://images5.fanpop.com/image/photos/27800000/ASU-Sparky-arizona-state-university-asu-27873526-900-900.gif',
+        size: new google.maps.Size(120, 120),
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(17, 34),
+        scaledSize: new google.maps.Size(50, 50)
+    };
+
     navigator.geolocation.getCurrentPosition(geolocationSuccess,geolocationError,{ maximumAge:60000, timeout:5000, enableHighAccuracy: true });
 
     console.log(geolocationError);
@@ -342,17 +345,11 @@ function initMap() {
 
     var mapOptions 		= {zoom: zoom, center: curLatLng };
     map                 = new google.maps.Map(mapElement, mapOptions);
-    markerOptions 	= {position: curLatLng, map: map, draggable: false};
+    markerOptions 	= {position: curLatLng, map: map, title: "current location", icon: image};
 
     marker = new google.maps.Marker(markerOptions);
 
-    google.maps.event.addListener(map, 'click', function (event) {
-        currentLat  = event.latLng.lat();
-        currentLong = event.latLng.lng();
-        marker.setPosition(event.latLng);
-        map.setCenter(event.latLng);
 
-    });
 
 
 }
@@ -377,82 +374,79 @@ function mapGeolocation() {
     marker.setPosition(curLatLng);
 
 
-
-
     console.log('mapGeolocation() current latitude is: ' + currentLat);
     console.log('mapGeolocation() current longtitude is: ' + currentLong);
     console.log('mapGeolocation() current lat long is: +' + curLatLng);
 
-    newMarker(curLatLng);
+    // newMarker(curLatLng);
 }
-
-function newMarker(curLatLng) {
-
-        var map;
-        var bounds = new google.maps.LatLngBounds();
-        var mapOptions = {mapTypeId: 'roadmap'};
-
-        // Display a map on the page
-        map = new google.maps.Map(document.getElementById("mapDiv"), mapOptions);
-        // map.setTilt(45);
-
-        // Multiple Markers
-        var markers = [ ['ASU, Tempe', 33.424564, -111.928001],
-                        ['CIS430', arr[0].long, arr[0].lat],
-                        ['Your Location', currentLat,currentLong]
-        ];
-        //load markers
-
-
-
-        // Info Window Content
-        var infoWindowContent = [
-            ['<div class="info_content">' + '<h3>Arizona State University</h3>' + '<p>content.</p>' + '</div>'],
-            ['<div class="info_content">' + '<h3>Corner Store</h3>' + '<p>content.</p>' + '</div>'],
-            ['<div class="info_content">' + '<h3>Your Location</h3>' + '<p>Your Location</p>' + '</div>'] ];
-
-        // Display multiple markers on a map
-        var infoWindow = new google.maps.InfoWindow(), marker, i;
-
-        // Loop through our array of markers & place each one on the map
-        for( i = 0; i < markers.length; i++ ) {
-            var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-
-            bounds.extend(position);
-
-            marker = new google.maps.Marker({
-
-                position: position,
-                map: map,
-                title: markers[i][0]
-
-            });
-
-            // Allow each marker to have an info window
-            google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                return function() {
-
-                    infoWindow.setContent(infoWindowContent[i][0]);
-                    infoWindow.open(map, marker);
-
-                    //display to the liststuff div
-
-                }
-            })(marker, i));
-
-            // Automatically center the map fitting all markers on the screen
-            // map.fitBounds(bounds);
-        }
-
-        // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
-        var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
-            this.setZoom(14);
-            google.maps.event.removeListener(boundsListener);
-        });
-
-        map.setCenter(curLatLng);
-}
-
+//
+// function newMarker(curLatLng) {
+//
+//         var map;
+//         var bounds = new google.maps.LatLngBounds();
+//         var mapOptions = {mapTypeId: 'roadmap'};
+//
+//         // Display a map on the page
+//         map = new google.maps.Map(document.getElementById("mapDiv"), mapOptions);
+//         // map.setTilt(45);
+//
+//         // Multiple Markers
+//         var markers = [ ['ASU, Tempe', 33.424564, -111.928001],
+//                         ['CIS430', arr[0].long, arr[0].lat],
+//                         ['Your Location', currentLat,currentLong]
+//         ];
+//         //load markers
+//
+//
+//
+//         // Info Window Content
+//         var infoWindowContent = [
+//             ['<div class="info_content">' + '<h3>Arizona State University</h3>' + '<p>content.</p>' + '</div>'],
+//             ['<div class="info_content">' + '<h3>Corner Store</h3>' + '<p>content.</p>' + '</div>'],
+//             ['<div class="info_content">' + '<h3>Your Location</h3>' + '<p>Your Location</p>' + '</div>'] ];
+//
+//         // Display multiple markers on a map
+//         var infoWindow = new google.maps.InfoWindow(), marker, i;
+//
+//         // Loop through our array of markers & place each one on the map
+//         for( i = 0; i < markers.length; i++ ) {
+//             var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+//
+//             bounds.extend(position);
+//
+//             marker = new google.maps.Marker({
+//
+//                 position: position,
+//                 map: map,
+//                 title: markers[i][0]
+//
+//             });
+//
+//             // Allow each marker to have an info window
+//             google.maps.event.addListener(marker, 'click', (function(marker, i) {
+//                 return function() {
+//
+//                     infoWindow.setContent(infoWindowContent[i][0]);
+//                     infoWindow.open(map, marker);
+//
+//                     //display to the liststuff div
+//
+//                 }
+//             })(marker, i));
+//
+//             // Automatically center the map fitting all markers on the screen
+//             // map.fitBounds(bounds);
+//         }
+//
+//         // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+//         var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+//             this.setZoom(14);
+//             google.maps.event.removeListener(boundsListener);
+//         });
+//
+//         map.setCenter(curLatLng);
+// }
 //END MAP: End of map section code
 
 //Code for user sessions

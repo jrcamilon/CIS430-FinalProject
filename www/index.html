@@ -15,7 +15,7 @@
     <!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval';img-src * data: 'unsafe-inline'; fmedia-src mediastream;">-->
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <!--<link rel="stylesheet" type="text/css" href="css/menu-main.css" />-->
+    <link rel="stylesheet" type="text/css" href="css/hostform.css" />
     <link rel="stylesheet" type="text/css" href="css/slideout.css" />
     <link rel="stylesheet" href="css/images.css">
     <link rel="stylesheet" type="text/css" href="css/findGroupStyle.css" />
@@ -28,7 +28,7 @@
 
 <div class="main-container">
 
-        <div class="form" id="login-signup">
+    <div class="form" id="login-signup">
 
             <ul class="tab-group">
                 <li class="tab active"><a href="#signup">Sign Up</a></li>
@@ -42,7 +42,6 @@
                     <h1 id="signup-message">Sign Up for Free</h1>
 
                     <form>
-                        <!--<form action="/" method="post">-->
 
                         <div class="top-row">
                             <div class="field-wrap">
@@ -193,38 +192,59 @@
 
 
 
-
         <!--host group-->
         <div id="page1" class="inactive header">
-
             <div id="header-host" class="headericon header">
                 <img id="hostGroupPage-backBtn" src="img/back-icon.svg" class="backicon" alt="">
                 <img id="host-logo" class="centericon" src="img/group-icon.svg" alt="">
             </div>
-
             <div class="bodypage">
 
-                <h3>Red</h3>
-                <p style="color: #000;">
-                    Red is the color at the longer-wavelengths end of the spectrum of
-                    visible light next to orange, at the opposite end from violet. Red
-                    color has a predominant light wavelength of roughly 620–740
-                    nanometers. Light with a longer wavelength than red but shorter
-                    than terahertz radiation and microwave is callaed infrared.
+                <div class="hostform">
 
+                    <form id="form1">
 
-                </p>
+                        <div class="field-wrap">
+                            <label for="cname">
+                                CLASS NAME
+                            </label>
+                            <input id="cname" name="hostclassName" type="text" required autocomplete="off"/>
+                        </div>
 
+                        <div class="field-wrap">
+                            <label for="loc">
+                                LOCATION
+                            </label>
+                            <input id="loc" name="hostlocation" type="text" required autocomplete="off"/>
+                        </div>
+
+                        <div class="field-wrap">
+                            <label for="time">
+                                TIME
+                            </label>
+                            <input id="time" name="hosttime" type="text" required autocomplete="off"/>
+                        </div>
+
+                        <div class="field-wrap">
+                            <label for="desc">
+                                DESCRIPTION
+                            </label>
+                            <input id="desc" name="hostdescription" type="text" required autocomplete="off"/>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                
 
             </div>
 
-
             <div id="foot-page1" class="foot">
                 <ul>
-                    <li><button id="page1-clearbtn" class="tabLink button-main-menu">CLEAR</button></li>
-                    <li><button id="page1-donebtn" class="tabLink button-main-menu">DONE</button></li>
+                    <li><button id="page1-clearbtn" class="tabLink button-main-menu" onclick="clearForm()">CANCEL</button></li>
+                    <li><button id="page1-donebtn" class="tabLink button-main-menu" onclick="submit()">SUBMIT</button></li>
                 </ul>
-
             </div>
 
 
@@ -237,43 +257,34 @@
                 <img id="findGroupPage-backBtn" src="img/back-icon.svg" class="backicon" alt="">
                 <img src="img/find-icon.svg" alt="" class="centericon">
             </div>
-
-
             <div class="bodypage">
+                <div id="findGroup">
+                    <h2>Go Study</h2>
+
+                        <input type="text" id="myInput" onkeyup="searchClassFunction()" placeholder="Search for names.." title="Type in a name">
+
+                        <button type="button" id="showClassButton" onclick="showClassClick()" class="buttonStyle"><i class="fa fa-refresh fa-spin"></i>Show Available Classes</button>
+
+                        <h3 id="classRuturned"></h3> <!-- blank line here -->
 
 
-            <div id="findGroup">
-            
-                <h2>Go Study</h2>
+                        <table id="myTable" class="tableClass">
+                          <tr class="header">
+                            <th style="width:100%;">Class</th>
 
-                    <input type="text" id="myInput" onkeyup="searchClassFunction()" placeholder="Search for names.." title="Type in a name">
+                        </table>
 
-                    <button type="button" id="showClassButton" onclick="showClassClick()"><i class="fa fa-refresh fa-spin"></i>Show Available Classes</button>
+                        <div id="queryOutput" class="tableClass2"></div>
 
-                    <h3 id="classRuturned"></h3> <!-- blank line here -->
-
-                    
-                    <table id="myTable" class="tableClass">
-                      <tr class="header">
-                        <th style="width:100%;">Class</th>
-
-                    </table>
-                   
-                    <div id="queryOutput" class="tableClass2" "></div>
-               
-                
                 </div> <!-- END K Code-->
 
 
             </div>
-
-
             <div id="foot-page2" class="foot">
                 <ul>
                     <li><button id="page2-clearbtn" class="tabLink button-main-menu">CLEAR</button></li>
                     <li><button id="page2-donebtn" class="tabLink button-main-menu">SEARCH</button></li>
                 </ul>
-
             </div>
 
 
@@ -327,16 +338,16 @@
 
             <div class="bodypage">
 
-                <h3>MyClasses</h3>
-                <p style="color: #000;">
-                    Red is the color at the longer-wavelengths end of the spectrum of
-                    visible light next to orange, at the opposite end from violet. Red
-                    color has a predominant light wavelength of roughly 620–740
-                    nanometers. Light with a longer wavelength than red but shorter
-                    than terahertz radiation and microwave is callaed infrared.
+                    <h3 id="added"></h3> <!-- blank line here -->
 
 
-                </p>
+                    <table id="addedClasses" class="tableClass">
+                        <tr class="header">
+                            <th class="...">Class</th>
+
+                    </table>
+
+                    <div id="addedClassesOutput" class="tableClass2"></div>
 
 
             </div>
@@ -344,8 +355,8 @@
 
             <div id="foot-myclasses" class="foot">
                 <ul>
-                    <li><button id="page4-clearbtn" class="tabLink button-main-menu">CLEAR</button></li>
-                    <li><button id="page4-donebtn" class="tabLink button-main-menu">SEARCH</button></li>
+                    <li><button id="myclass-refreshbtn" class="tabLink button-main-menu" onclick="getAddedClasses()">REFRESH</button></li>
+                    <li><button id="myclass-loadmap" class="tabLink button-main-menu" onclick="refreshMarkers()">LOAD TO MAP</button></li>
                 </ul>
 
             </div>
@@ -367,6 +378,9 @@
     <script type="text/javascript" src="js/jQuery.js"></script>
     <script type="text/javascript" src="js/eventHandlers.js"></script>
     <script type="text/javascript" src="js/findGroup.js"></script>
+    <script type="text/javascript" src="js/addToMyClasses.js"></script>
+    <script type="text/javascript" src="js/hostForm.js"></script>
+
 
 </body>
 
