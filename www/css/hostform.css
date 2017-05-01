@@ -1,0 +1,36 @@
+.hostform {
+    background: rgba(19, 35, 47, 0.9);
+    padding: 40px;
+    height: 100%;
+    border: 1px solid #a0b3b0;
+    color: #ffffff;
+}
+
+.hostform label {
+    color: white;
+    display: block;
+    text-align: center;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.hostform textarea {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 50px;
+    resize: none;
+}
+
+.hostform input {
+    margin: auto;
+    width: 90%;
+    text-align:center;
+    display: block;
+    border-radius: 0;
+    height: 30px;
+    font-size: 20px;
+    padding: 2px;
+}
+

@@ -85,14 +85,15 @@ $('#slidemenu-profile').on('click', function () {
 
 $('#slidemenu-myclasses').on('click', function() {
 
-    console.log('my classes button pressed');
+    console.log('my classes button pressed from slide menu');
 
     $('.menu-side').toggleClass('menu-side-open');
     $('#main-menu').toggleClass('menu-open');
-
+    //
     $('#myclasses').show();
     $('#main-menu').hide();
 
+    console.log('getting all the users classes');
 
 
 });
@@ -119,8 +120,20 @@ $('#logoutbtn').on('click', function() {
     console.log('logout pressed');
 
     $('#mainApp').hide();
+
+
+    //menu-open
+    //menu-side-open
+    $('#main-menu').removeClass('menu-open');
+    $('#slide-menu').removeClass('menu-side-open');
+
+
+
     $('#login-signup').show();
-    $('#slide-menu').toggleClass('active');
+
+
+
+
 
     userLogout();
 
@@ -136,3 +149,19 @@ function goBackToMain() {
     $('#main-menu').show();
 }
 
+$('#myclass-refreshbtn').on('click', function() {
+
+    console.log('refresh button clicked');
+
+
+
+});
+
+$('#myclass-loadmap').on('click', function() {
+
+    console.log('back btn pressed');
+
+    $('#main-menu').show();
+    goBackToMain();
+
+});

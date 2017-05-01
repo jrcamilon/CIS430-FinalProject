@@ -9,11 +9,11 @@
     display: block;
 }
 
-.headericon #slideouticon {
-    border: red solid;
-    float: left;
-    margin: auto;
-}
+/*.headericon #slideouticon {*/
+    /*border: red solid;*/
+    /*float: left;*/
+    /*margin: auto;*/
+/*}*/
 
 /*this is for all the header icons the back and center*/
 .headericon img {
@@ -21,7 +21,7 @@
     height: 100%;
     width: 100%;
     padding-bottom: 1%;
-    float: none;
+    /*float: none;*/
     width:auto;
 }
 
