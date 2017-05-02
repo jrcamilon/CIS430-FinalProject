@@ -311,5 +311,6 @@ body {  background: #ffffff;  font-family: 'Titillium Web', sans-serif; }
 
 .centericon {
     text-align: center;
-    padding-left: 35%;
+    float: right;
+    padding-right: 5%;
 }

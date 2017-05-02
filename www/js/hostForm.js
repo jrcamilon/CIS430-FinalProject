@@ -1,10 +1,13 @@
+/** This page is for the host form
+ * inside the main page, allows the form from
+ * the host form page to be inserted into the database**/
+
+
 "use strict";
 
 
-var classId;
 
 function submit() {
-    //onclick event
 
     console.log('submit pressed');
 
@@ -13,17 +16,17 @@ function submit() {
     var time            =  document.getElementById('time').value;
     var description     =  document.getElementById('desc').value;
 
+    console.log('sending values in:' + className );
     getHighestClassId(className, location, time, description);
-
-
-
 
 
 }
 
 function getHighestClassId (className, location, time, description) {
 
-    var statement = 'select MAX(classId) from class VALUES';
+    console.log('values inside getHighestClassId function');
+
+    var statement = 'select MAX(classId) from class';
 
     MySql.Execute(
         dbHost,
@@ -36,37 +39,52 @@ function getHighestClassId (className, location, time, description) {
             var test = JSON.stringify(data.Result, null, 2);
             var json = JSON.parse(test);
 
-            classId = json["0"]["MAX(classId)"] ;
+            var classId = json["0"]["MAX(classId)"];
+
             classId = classId + 1;
 
-            executeStaement(className, location, time, description)
-
+            executeStaement(className, location, time, description, classId);
         }
     )
-
-
-
 }
 
-function executeStaement(className, location, time, description) {
+function executeStaement(className, location, time, description, idUsed) {
 
-    var statement   = "INSERT INTO class (";
+    var statement   = "INSERT INTO class VALUES(";
     var char        = "'";
     var com         = ",";
     var end         = ");";
 
-    var sqlStatement = statement.concat(char,classId,char,com,
+    var sqlStatement = statement.concat(char,idUsed,char,com,
         char,className,char,com,
         char,description,char,com,
         char,location,char,com,
         char,time,char,com,
         char, crSessionEmail, char, com,
-        char, currentLong, char, com,
-        char, currentLat, char, end);
+        char, currentLat, char, com,
+        char, currentLong, char, end);
 
     console.log(sqlStatement);
 
+    executeHostSQLStatement(sqlStatement);
 
+
+}
+
+function executeHostSQLStatement(sqlStatement){
+
+    console.log('executing SQL statement.. connecting to DB');
+    MySql.Execute(
+        dbHost,
+        dbLogin,
+        dbLoginPass,
+        dbName,
+        sqlStatement,
+        function (data) {
+                console.log('complete!');
+                document.getElementById('host-message').innerHTML = 'SUCCESSFULLY ADDED!';
+
+        });
 }
 
 function clearForm() {
@@ -76,6 +94,10 @@ function clearForm() {
     document.getElementById('time').value = "";
     document.getElementById('desc').value = "";
 
+    document.getElementById('host-message').innerHTML = '';
+
+
     goBackToMain();
 
 }
+

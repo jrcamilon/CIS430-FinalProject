@@ -41,63 +41,6 @@ var crSessionEmail  = undefined; // this is the current session user's email e.g
 var crSessionPassword = undefined; // this is the current session user's password.
 
 
-
-//
-// //test code
-// var testOBJ = {
-//     class: "CIS430",
-//     host: "Tony Stark",
-//     description: "none",
-//     long: 33.277342,
-//     lat: -111.789769
-// };
-//
-// var testOBJ2 = {
-//     class: "ACC444",
-//     host: "Bruce Banner",
-//     description: "none",
-//     long: 33.263169,
-//     lat: -111.789871
-// };
-//
-//
-//
-//
-//
-// var arr = [testOBJ, testOBJ2];
-
-function insertHostToDB() {
-
-    var className;
-    var hostName;
-    var locationName;
-    var description;
-    var long;
-    var lat;
-
-
-    //db table headers are (SID, Class, Host, Location, Description, Long, Lat)
-    var statementBegin = "INSERT INTO users (className,hostName,,location,description,long,lat) VALUES(";
-    var            com = ",";
-    var           char = "'";
-    var   statementEnd = ");";
-    var   sqlStatement = statementBegin.concat(char,
-        className,char,com,char,
-        hostName,char,com,char,
-        locationName,char,com,char,
-        description,char,com,char,
-        long, char,com,char,
-        lat, char,statementEnd);
-
-    executeSQLStatement(sqlStatement, 'insert');
-
-    //prompt user that you have now created a session to host, output to the #liststuff div
-
-
-}
-
-
-
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady(){
@@ -107,7 +50,6 @@ function onDeviceReady(){
 function initialize() {
 
     //hide everything but the login form div and initialize the map
-    // $('.form').hide();
     $('#mainApp').hide();
     // $(document.body).removeClass('bg-image');
 
@@ -217,10 +159,13 @@ function executeSQLStatement(sqlStatement, sqlStatementType){
         function (data) {
 
             if(sqlStatementType === 'insert'){
+
                 console.log(data);
                 console.log('insert complete');
+                console.log(sqlStatement);
 
             } else if (sqlStatementType === 'select'){
+
                 processQueryResult(data);
                 console.log('select statement complete, success! returned JSON objects')
             }

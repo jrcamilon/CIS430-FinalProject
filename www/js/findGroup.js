@@ -27,6 +27,8 @@ function showClassClick(){
     console.log('showclass button was pressed');
 
 
+
+
     $('#showClassButton').prop('disabled', true);
     $('#showClassButton').toggleClass('disabledButton');
 
@@ -131,6 +133,12 @@ function processQueryResult3(queryReturned) {
     }
 }
 
+function clearTable() {
+    $('#queryOutput tbody > tr').remove();
+    $('#showClassButton').prop('disabled', false);
+    $('#showClassButton').toggleClass('disabledButton');
+
+}
 
 
 // function executeSQLStatement101(sqlStatement, sqlStatementType){
