@@ -56,6 +56,7 @@ function initialize() {
     // loadScript('initMap');
 
     mapElement 	   = document.getElementById('mapDiv');
+
     // statusBarHide();
 }
 //cordova made function to hide the status bar for both ios and android mobile phones.
