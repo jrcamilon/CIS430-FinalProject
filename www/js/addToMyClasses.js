@@ -11,7 +11,7 @@
 
 "use strict";
 
-
+// marker objects
 function MarkerObj(classname, description, long, lat, time) {
     this.className = classname;
     this.description = description;
@@ -24,13 +24,7 @@ var markerArr = [];
 var markers = [];
 
 
-
 function getAddedClasses() {
-    //SQL statement to get classes
-    console.log('executing SQL statement to get the students added classes');
-
-    /** select * from class
-     where classId in (select class from classbridge where studentid in ('ts@asu.edu')); **/
 
     var testStatement = "select * from class where classId in (select class from classbridge where studentid in ('ts@asu.edu'));";
 
@@ -50,9 +44,7 @@ function getAddedClasses() {
         dbName,
         testStatement,
         function (data) {
-
                 processAddedClasses(data);
-
         });
 
 }
@@ -63,15 +55,12 @@ function processAddedClasses(queryReturned) {
 
 
     if (!queryReturned.Success) {
-        // alert(queryReturned.Error);
 
         console.log(queryReturned.Error);
 
     } else {
 
         var queryOut, table, tableBody, tableHeader, tableRow;
-        // var rows = queryReturned.length;
-
 
         $('#addedClassesOutput tbody > tr').remove();
 
@@ -80,25 +69,16 @@ function processAddedClasses(queryReturned) {
         tableBody   = document.createElement("tbody");
         tableHeader = document.createElement("tr");
 
-
-
         var myObject = JSON.stringify(queryReturned.Result, null, 2);
         var json     = JSON.parse(myObject);
-
 
         for (var k =0; k < json.length; k++) {
 
             var object = json[k];
-            //get long and lat of each classes
             var marker = new MarkerObj(object.className, object.description, object.lat, object.long, object.time);
-
             markerArr.push(marker);
-            // console.log(marker);
-
-            // refreshMarkers();
 
         }
-
 
         for (var i =0; i<queryReturned.Result[0].length; i++) {
             var cell     = document.createElement("th");
@@ -106,8 +86,6 @@ function processAddedClasses(queryReturned) {
 
             cell.appendChild(cellText);
             tableHeader.appendChild(cell);
-
-
 
         }
 
@@ -125,7 +103,6 @@ function processAddedClasses(queryReturned) {
                 cell.appendChild(cellText);
                 tableRow.appendChild(cell);
 
-
             }
 
             var buttonVar=document.createElement("button");
@@ -135,9 +112,6 @@ function processAddedClasses(queryReturned) {
                 console.log(this.parentNode.cells[0].innerHTML);
                 console.log(this.parentNode.cells[4].innerHTML);
                 classId = this.parentNode.cells[0].innerHTML;
-                // hostId  = this.parentNode.cells[4].innerHTML;
-
-                //DELETE FROM `test_db_ecamilon`.`classbridge` WHERE `studentid`='ts@asu.edu' and`class`='1';
 
 
                 var statementBegin = "DELETE FROM classbridge WHERE studentid = '";
@@ -174,7 +148,6 @@ function processAddedClasses(queryReturned) {
 
 function refreshMarkers() {
 
-
     //loop through the markerArr of Objects
     for (var k = 0; k < markerArr.length; k++) {
 
@@ -187,7 +160,6 @@ function refreshMarkers() {
         };
 
         markers.push(eachMarkerobj);
-
     }
 
     var marker;
@@ -237,9 +209,6 @@ function refreshMarkers() {
         this.setZoom(14);
         google.maps.event.removeListener(boundsListener);
     });
-
-
-
 
 
 }

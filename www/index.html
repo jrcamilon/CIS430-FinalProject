@@ -24,6 +24,7 @@
 
     <div class="form" id="login-signup">
 
+            <!--Login Signup Code borrowed and edited from Miguel Sanchez, from https://codepen.io/miguelsanchez/-->
             <ul class="tab-group">
                 <li class="tab active"><a href="#signup">Sign Up</a></li>
                 <li class="tab"><a href="#login">Log In</a></li>
@@ -228,14 +229,10 @@
 
                     </form>
 
-
                     <p id="host-message"></p>
-
-
 
                 </div>
 
-                
 
             </div>
 
@@ -299,31 +296,58 @@
             </div>
 
 
-            <div class="bodypage">
+            <div class="bodypage" >
 
-                <h3>PROFILE</h3>
+                <div class="profile">
+                    <h3>PROFILE</h3>
 
-                <p style="color: #000;">
-                    Red is the color at the longer-wavelengths end of the spectrum of
-                    visible light next to orange, at the opposite end from violet. Red
-                    color has a predominant light wavelength of roughly 620–740
-                    nanometers. Light with a longer wavelength than red but shorter
-                    than terahertz radiation and microwave is callaed infrared.
+                    <form action="#">
+                        <div class="profile-firstname">
+                            <label for="first-nameEP">First Name<span class="req">*</span>
+                            </label>
+                            <input id="first-nameEP" class="profile-input" name="first-name" type="text" required autocomplete="off"/>
+                        </div>
 
-                </p>
 
+
+                        <div class="">
+                            <label for="last-name">Last Name<span class="req">*</span>
+                            </label>
+                            <input id="last-nameEP" class="profile-input" name="last-name" type="text" required autocomplete="off"/>
+                        </div>
+
+                        <div class="">
+                            <label for="aliasEP">Alias<span class="req">*</span>
+                            </label>
+                            <input id="aliasEP" class="profile-input"  name="alias" type="text" required autocomplete="off"/>
+                        </div>
+
+                        <div class="">
+                            <label for="emailEP">E-mail<span class="req">*</span>
+                            </label>
+                            <input id="emailEP" class="profile-input"  name="email" type="email" required autocomplete="off"/>
+                        </div>
+
+                        <div class="">
+                            <label for="passwordEP">Password<span class="req">*</span>
+                            </label>
+                            <input id="passwordEP" class="profile-input"  name="password" type="password" required autocomplete="off"/>
+                        </div>
+
+
+                    </form>
+
+                </div>
 
             </div>
-
 
             <div id="foot-profile" class="foot">
                 <ul>
                     <li><button id="page3-clearbtn" class="tabLink button-main-menu">CLEAR</button></li>
-                    <li><button id="page3-donebtn" class="tabLink button-main-menu">SEARCH</button></li>
+                    <li><button id="page3-donebtn" class="tabLink button-main-menu" onclick="loadButtonClick()">SUBMIT</button></li>
                 </ul>
 
             </div>
-
 
         </div>
 
@@ -349,7 +373,6 @@
 
             </div>
 
-
             <div id="foot-myclasses" class="foot">
                 <ul>
                     <li><button id="myclass-refreshbtn" class="tabLink button-main-menu" onclick="getAddedClasses()">REFRESH</button></li>
@@ -357,7 +380,6 @@
                 </ul>
 
             </div>
-
 
         </div>
 
@@ -370,6 +392,7 @@
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><!-- this is for the signup and login page-->
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/profile.js"></script>
     <script type="text/javascript" src="js/mysql.js"></script>
     <script type="text/javascript" src="js/jQuery.js"></script>
     <script type="text/javascript" src="js/eventHandlers.js"></script>

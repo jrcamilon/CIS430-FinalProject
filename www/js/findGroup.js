@@ -141,37 +141,6 @@ function clearTable() {
 }
 
 
-// function executeSQLStatement101(sqlStatement, sqlStatementType){
-//
-//     console.log('executing SQL statement.. connecting to DB');
-//     MySql.Execute(
-//         dbHost,
-//         dbLogin,
-//         dbLoginPass,
-//         dbName,
-//         sqlStatement,
-//         function (data) {
-//
-//             if(sqlStatementType == 'insert'){
-//                 //console.log(data);
-//                 console.log('insert complete');
-//
-//             } else if (sqlStatementType == 'select'){
-//                 processQueryResult(data);
-//                 console.log('select statement complete, success! returned JSON objects')
-//             }
-//
-//         });
-// }
-
-
-
-
-
-
-
-
-
 
 
 

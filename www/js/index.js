@@ -36,6 +36,9 @@ var markerOptions   = undefined;
 
 
 //Profile Session Variables
+var curSessionFName = "";
+var curSessionLName = "";
+var curSessionAlias = "";
 var curSessionUser  = undefined; //this is the current session user e.g. Tony Stark;
 var crSessionEmail  = undefined; // this is the current session user's email e.g. logged in as: ts@asu.ed
 var crSessionPassword = undefined; // this is the current session user's password.
@@ -57,7 +60,7 @@ function initialize() {
 
     mapElement 	   = document.getElementById('mapDiv');
 
-    // statusBarHide();
+    statusBarHide();
 }
 //cordova made function to hide the status bar for both ios and android mobile phones.
 function statusBarHide(){
@@ -169,6 +172,8 @@ function executeSQLStatement(sqlStatement, sqlStatementType){
 
                 processQueryResult(data);
                 console.log('select statement complete, success! returned JSON objects')
+            } else if (sqlStatement === 'update') {
+                console.log('update complete');
             }
 
         });
@@ -241,6 +246,8 @@ function loadMainMenu(){
 }
 
 function grabCurrentUserInformation(json) {
+    curSessionFName     = json[0].fname;
+    curSessionLName     = json[0].lname;
     curSessionUser      = json[0].fname + ' ' + json[0].lname;
     crSessionEmail      = json[0].email;
     crSessionPassword   = json[0].password;

@@ -2,15 +2,13 @@
 
 // save the divs into variables for easy calling
 
-var mainMenu        = $('#main-menu');
-var profilePage     = $('#profile');
-var hostGroupPage   = $('#page1');
-var findGroupPage   = $('#page2');
-var myClassesPage   = $('#myclasses');
-var logoutPage      = $('#logout-page');
-
-var mainApp         = $('#mainApp');
-
+// var mainMenu        = $('#main-menu');
+// var profilePage     = $('#profile');
+// var hostGroupPage   = $('#page1');
+// var findGroupPage   = $('#page2');
+// var myClassesPage   = $('#myclasses');
+// var logoutPage      = $('#logout-page');
+// var mainApp         = $('#mainApp');
 
 $('#host-group-button').on('click', function() {
    console.log('host btn pressed');
@@ -71,15 +69,12 @@ $('#menuicon').on('click', function() {
 });
 
 $('#slidemenu-profile').on('click', function () {
-
     console.log('profile button pressed');
-
     $('.menu-side').toggleClass('menu-side-open');
     $('#main-menu').toggleClass('menu-open');
-
+    profileOnLoad();
     $('#profile').show();
     $('#main-menu').hide();
-
 
 });
 
@@ -117,24 +112,10 @@ $('#profile-backbtn').on('click', function() {
 //Logout event handler for when user clicks logout from slider menu
 $('#logoutbtn').on('click', function() {
 
-    console.log('logout pressed');
-
     $('#mainApp').hide();
-
-
-    //menu-open
-    //menu-side-open
     $('#main-menu').removeClass('menu-open');
     $('#slide-menu').removeClass('menu-side-open');
-
-
-
     $('#login-signup').show();
-
-
-
-
-
     userLogout();
 
 
@@ -145,7 +126,6 @@ function goBackToMain() {
     $('#page1').hide();
     $('#profile').hide();
     $('#myclasses').hide();
-
     $('#main-menu').show();
 }
 
@@ -158,9 +138,7 @@ $('#myclass-refreshbtn').on('click', function() {
 });
 
 $('#myclass-loadmap').on('click', function() {
-
     console.log('back btn pressed');
-
     $('#main-menu').show();
     goBackToMain();
 
